@@ -1,0 +1,16 @@
+# humanstxt.org
+
+/* TEAM */
+Website: Al Mohandes Life Insurance
+Location: Cairo, Egypt
+Contact: info@mohins.com
+
+/* SITE */
+Standards: HTML5, CSS3, JavaScript
+Components: Next.js, React, Tailwind CSS
+Software: VS Code, Git
+Language: Arabic / English
+
+/* THANKS */
+To all our customers and partners who trust us with their insurance needs.
+

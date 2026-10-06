@@ -1,0 +1,110 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# security-sensitive files
+# private keys and certificates
+*.key
+*.crt
+*.cer
+*.der
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.asc
+*.gpg
+
+# ssh keys
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+.ssh/
+
+# environment / secrets
+*.secret
+*.secrets
+secrets.*
+.envrc
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.vault
+.vault-token
+
+# penetration testing & security testing
+/security-testing/
+**/*pentest*
+**/*penetration*
+*.pentest
+pentest-*.js
+pentest-*.ts
+security-test-*.js
+security-test-*.ts
+SECURITY_*.md
+START_HERE.md
+# Security assessment reports (uncomment if you want to ignore them)
+# SECURITY_*.md
+
+# package/token configs that may contain credentials
+.npmrc
+.yarnrc
+.pnpmrc
+
+# cloud provider credentials/config
+.aws/
+.azure/
+.config/gcloud/
+.kube/
+.docker/config.json
+
+SEO_*.md
+QUICK*.md
+SSG_*.md
+
+# database dumps and local databases
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+*.dump

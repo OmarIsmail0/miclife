@@ -1,0 +1,364 @@
+{
+  "Company": "Mohandes Insurance Company",
+  "welcome": "Welcome",
+  "faq": "Frequently Asked Questions",
+  "download": "DOWNLOAD (PDF)",
+  "Meeting Date": "Meeting Date",
+  "Presentation": "Presentation",
+  "Meeting Minutes": "Meeting Minutes",
+  "Financial Results": "Financial Results",
+  "BOD Statement": "BOD Statement",
+  "CEO's Report": "CEO Report",
+  "Management Discussion & Analysis": "Management Discussion & Analysis",
+  "Company Information Hub": "Company Information Hub",
+  "send": "Send",
+
+  "learn more": "Learn More",
+  "Percentage owned": "Percentage Owned",
+  "Ownership percentage": "Ownership Percentage",
+  "Contributor": "Contributor",
+  "Shareholder structure": "Shareholder structure",
+  "Insurance services": "Insurance services",
+  "Our Mission, Vision and Values": "Our Mission, Vision and Values",
+  "Customer reviews": "Customer Reviews",
+  "Board Members": "Board Members",
+  "Medical insurance application": "Medical insurance application",
+  "name": "Name",
+  "email": "Email",
+  "mobile": "Mobile Number",
+  "city": "City",
+  "model": "Model",
+  "year": "Year",
+  "quote": "< Get a Free Quote",
+  "maintain your car": "Maintain Your Car",
+  "register": "Register Now",
+  "register question": "Are you a member of Al Mohandes Insurance Company ?",
+  "register paragraph": "Register now and benefit from the benefits of membership with Al Mohandes Insurance Company",
+  "Contracted Medical Networks": "Contracted Medical Networks",
+  "Property Insurance Request": "Property Insurance Request",
+  "Car insurance request": "Car Insurance Request",
+  "engineeringInsuranceForm": "Engineering Insurance Request",
+  "insuranceTypes": "Insurance Types",
+  "transportInsuranceRequest": "Transport Insurance Request",
+  "personalAccidentInsuranceRequest": "Personal Accident Insurance Request",
+  "contact us on the number": "Contact us via hotline",
+  "contact us on the whatsapp": "Contact us via WhatsApp",
+  "contact us on the email": "Contact us via Email",
+  "we call you back": "We can call you back",
+  "accident": "Had an accident? Thank God you're safe.",
+  "accident notification": "To submit an accident notification electronically",
+  "roadside assistance": "For roadside assistance service",
+  "community": "Latest Mohandes Community Contributions",
+  "meunItems": {
+    "Dashboard": "Dashboard",
+    "About Us": "About Us",
+    "Products": "Products",
+    "Investor Relations": "Investor Relations",
+    "Contact Senior Management": "Contact Senior Management",
+    "Our Story": "Our Story",
+    "Our Vision - Our Mission - Our Values": "Our Vision - Our Mission - Our Values",
+    "Contributors": "Contributors",
+    "Board of Directors": "Board of Directors",
+    "Chairman's Speech": "Speech by the Vice Chairman and Managing Director",
+    "Property insurance": "Property insurance",
+    "Medical insurance": "Medical insurance",
+    "Car insurance": "Car insurance",
+    "Personal accident insurance": "Personal Accident Insurance",
+    "Land and sea transport and ship hulls": "Land and Sea Transport and Ship Hulls",
+    "Engineering Insurance": "Engineering Insurance",
+    "Our social responsibility": "Our Social Responsibility",
+    "Media Center": "Media Center",
+    "Customer Service": "Customer Service",
+    "Governance": "Governance",
+    "Financial Reports": "Financial Reports",
+    "Our Company": "Our Company",
+    "News": "News",
+    "Awards": "Awards",
+    "Videos": "Videos",
+    "Images": "Images",
+    "Mohandes Insurance Programs": "Mohandes Insurance Products",
+    "Jobs": "Jobs",
+    "Job opportunities": "Job opportunities",
+    "Current available jobs": "Current available jobs",
+    "Payment": "Online Payment",
+    "Company purpose": "Company purpose: To practice all insurance and reinsurance operations and branches of property and liability insurance.",
+    "Company term": "Company term: 50 years",
+    "Law governing": "Law governing the company: No. 159 of 1981",
+    "contactUs": "Contact Us",
+    "Insurance services": "Insurance services",
+    "corporate insurance": "Corporate Insurance",
+    "individual insurance": "Individual Insurance"
+  },
+  "financialUpdates": {
+    "title": "Keeping Up with Developments",
+    "description": "The company complies with all financial disclosure regulations issued by the market.",
+    "latestReports": "Latest Financial Results & Reports",
+    "generalMeetings": "General Assembly Meetings of Al Mohandes Insurance",
+    "governanceCommittee": "Governance Committee",
+    "riskCommittee": "Risk Committee",
+    "shareholderStructure": "Shareholder Structure"
+  },
+  "mediaCenter": {
+    "title": "Media Center",
+    "description": "Stay updated with the latest news from Al Mohandes Insurance",
+    "tabs": {
+      "news": "News",
+      "images": "Images",
+      "videos": "Videos",
+      "awards": "Awards"
+    },
+    "emptyStates": {
+      "news": "No news available at the moment. Please check back later.",
+      "images": "No images available at the moment. Please check back later.",
+      "videos": "No videos available at the moment. Please check back later.",
+      "awards": "No awards available at the moment. Please check back later."
+    }
+  },
+  "customerService": {
+    "title": "Contact Senior Management",
+    "contactInfo": "Contact Information",
+    "address": "123 Insurance Street, Cairo, Egypt",
+    "phone": "Phone:",
+    "workingHours": "Working Hours: Sunday - Thursday (8 AM - 4 PM)",
+    "sendMessage": "Send Us a Message",
+    "name": "Name",
+    "namePlaceholder": "Enter your name",
+    "email": "Email",
+    "emailPlaceholder": "example@email.com",
+    "phonePlaceholder": "Enter your phone number",
+    "message": "Message",
+    "messagePlaceholder": "Write your message here...",
+    "sendButton": "Send",
+    "messageSentSuccessfully": "Message sent successfully!",
+    "messageSendingFailed": "Failed to send message. Please try again.",
+    "description": "A service provided by the company to communicate directly with senior management by filling out the attached form to send complaints and suggestions, which will be reviewed and immediate contact will be made with the complainant or suggester.",
+    "usefulResources": {
+      "title": "Useful Resources",
+      "description": "Learn about the complexities of insurance through our extensive experience, and we will give you peace of mind through the useful tools and resources we provide you with.",
+      "resource1Title": "Customer Protection Guide",
+      "resource1Description": "",
+      "resource2Title": "Documents",
+      "resource2Description": "",
+      "resource3Title": "Most Important Insurance Books",
+      "resource3Description": ""
+    }
+  },
+  "branches": {
+    "company_branches": "Company Branches",
+    "address": "Address",
+    "phone": "Phone",
+    "fax": "Fax",
+    "email": "Email",
+    "website": "Website"
+  },
+  "footer": {
+    "follow": "Follow Us",
+    "location": "Locations",
+    "customer guide": "Customer Protection Guide",
+    "chat": "Chat with us"
+  },
+  "modal": {
+    "Your Car Details": "Your Car Details",
+    "Your Details": "Your Details",
+    "Your Quote": "Your Quote"
+  },
+  "payment": {
+    "title": "Online Payment",
+    "subtitle": "Now you can pay your insurance premiums immediately.",
+    "cardDetails": "Payment Details",
+    "cardNumber": "Card Number",
+    "cardNumberPlaceholder": "1234 5678 9012 3456",
+    "cardholderName": "Cardholder Name",
+    "cardholderNamePlaceholder": "John Doe",
+    "expiryDate": "Expiry Date",
+    "expiryDatePlaceholder": "MM/YY",
+    "cvv": "CVV",
+    "cvvPlaceholder": "123",
+    "payNow": "Pay Now",
+    "errors": {
+      "cardNumberRequired": "Please enter your card number",
+      "cardNumberInvalid": "Please enter a valid card number",
+      "cardholderNameRequired": "Please enter cardholder name",
+      "cardholderNameInvalid": "Please enter only letters",
+      "expiryDateRequired": "Please enter expiry date",
+      "expiryDateInvalid": "Please enter a valid expiry date (MM/YY)",
+      "cvvRequired": "Please enter CVV",
+      "cvvInvalid": "Please enter a valid CVV"
+    },
+    "success": "Payment processed successfully!",
+    "error": "Payment failed. Please try again."
+  },
+  "jobs": {
+    "title": "Current Available Jobs",
+    "subtitle": "Join our team and grow your career with us",
+    "searchPlaceholder": "Search jobs...",
+    "department": "Department",
+    "location": "Location",
+    "applyNow": "Apply Now",
+    "noJobsFound": "No jobs found matching your criteria",
+    "clearFilters": "Clear all filters",
+    "applyFor": "Apply for",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phone": "Phone",
+    "cv": "CV",
+    "uploadCV": "Upload CV",
+    "cancel": "Cancel",
+    "submitApplication": "Submit Application",
+    "applicationSuccess": "Application submitted successfully",
+    "applicationError": "Failed to submit application. Please try again.",
+    "validation": {
+      "firstNameRequired": "Please enter your first name",
+      "lastNameRequired": "Please enter your last name",
+      "emailRequired": "Please enter your email",
+      "emailInvalid": "Please enter a valid email",
+      "phoneRequired": "Please enter your phone number",
+      "cvRequired": "Please upload your CV"
+    },
+    "pagination": {
+      "showing": "Showing",
+      "of": "of",
+      "jobs": "jobs",
+      "perPage": "jobs per page"
+    }
+  },
+  "search": "Search...",
+  "newsAndEvents": {
+    "title": "Latest News & Events",
+    "description": "Stay up-to-date with the latest news and events at Al Mohandes Insurance Company."
+  },
+  "registerModal": {
+    "title": "Register Now",
+    "nameLabel": "Name",
+    "namePlaceholder": "Enter your full name",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "Enter your phone number",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your email address",
+    "submitButton": "Submit",
+    "cancelButton": "Cancel"
+  },
+ "installmentInquiry": {
+    "title": "Know Your Installment",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "mobile": "Mobile Number",
+    "city": "City",
+    "dateOfBirth": "Date of Birth",
+    "documentType": "Document Type",
+    "submit": "Submit",
+    "validation": {
+      "firstNameRequired": "First Name is required",
+      "lastNameRequired": "Last Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Email is invalid",
+      "mobileRequired": "Mobile Number is required",
+      "mobileInvalid": "Mobile Number is invalid"
+    },
+    "documentTypes": {
+      "id": "National ID",
+      "passport": "Passport",
+      "license": "Driver's License"
+    }
+  },
+  "registrationSuccessful": "Registration successful!",
+  "registrationFailed": "Registration failed. Please try again.",
+  "accidentModal": {
+    "title": "Accident Notification",
+    "policyNumberLabel": "Policy Number",
+    "emailLabel": "Email",
+    "descriptionLabel": "Description",
+    "attachmentsLabel": "Attachments",
+    "draggerText": "Drag and drop files here or click to upload",
+    "draggerHint": "Support for a single or bulk upload.",
+    "sendButton": "Send",
+    "sendingButton": "Sending...",
+    "successMessage": "Notification sent successfully",
+    "errorMessage": "Failed to send notification",
+    "emailValidation": "Please enter a valid email",
+    "emailBodyPolicy": "Policy Number:",
+    "emailBodyEmail": "Email:",
+    "emailBodyDescription": "Description:"
+  },
+  "helpCenter.faqIntro": "Do you have inquiries?",
+  "helpCenter.faqDescription": "You can quickly find the required answers on the Frequently Asked Questions page.",
+  "helpCenter.faqSubDescription": "Review the frequently asked questions about the insurance policy below",
+  "helpCenter.insuranceServicesTitle": "Or learn about our insurance services",
+  "helpCenter.corporateInsurance": "Corporate Insurance",
+  "helpCenter.individualInsurance": "Individual Insurance",
+  "helpCenter.learnMore": "Learn More",
+  "helpCenter.additionalHelpTitle": "Do you need additional assistance?",
+  "helpCenter.additionalHelpText": "You can contact us via messages, phone, or chat with the virtual assistant, and we will provide you with the required assistance happily.",
+  "aboutUs": {
+    "title": "Who We Are",
+    "description": [
+      "Mohandes Insurance Company was established in 1980 under registration number (6) to provide all types of insurance services in the Egyptian insurance market.",
+      "The authorized capital is 1 billion Egyptian pounds.",
+      "The paid-up capital is 350 million Egyptian pounds.",
+      "The total assets amount to 1,660 million pounds, with investments totaling 1,273 million pounds.",
+      "The company has a geographic branch network consisting of 23 branches spread across all governorates of Egypt."
+    ]
+  },
+
+  "life": {
+    "Insurance services": "All Your Insurance Needs",
+    "corporate insurance": "Corporate Insurance",
+    "individual insurance": "Individual Insurance"
+  },
+  "lifeInsurance": {
+    "heroTitle": "Protect your family from potential risks and get better financial protection in the future",
+    "learnMore": "Learn More",
+    "services": {
+      "cooperativePolicy": {
+        "title": "Cooperative Policy Program with Investment Savings",
+        "description": "Benefits Summary"
+      },
+      "increasingEngineer": {
+        "title": "Increasing Engineer Program with Profit Sharing",
+        "description": ""
+      },
+      "engineerWithProfit": {
+        "title": "Engineer Program with Profit Sharing",
+        "description": ""
+      },
+      "secondPolicyWithProfit": {
+        "title": "Second Policy with Profit Sharing",
+        "description": ""
+      },
+      "thirdPolicyWithProfit": {
+        "title": "Second Policy with Profit Sharing",
+        "description": ""
+      },
+      "fourthPolicyWithProfit": {
+        "title": "Fourth Policy with Profit Sharing",
+        "description": ""
+      },
+      "mixedWithProfit": {
+        "title": "Mixed Program with Profit Sharing",
+        "description": ""
+      },
+      "lifetimeWithProfit": {
+        "title": "Lifetime Program with Profit Sharing",
+        "description": ""
+      },
+      "childrenProtection": {
+        "title": "Children Protection Program",
+        "description": ""
+      },
+      "deferredPaymentWithProfit": {
+        "title": "Deferred Payment Program with Profit Sharing",
+        "description": ""
+      },
+      "caseWithProfit": {
+        "title": "Case Program with Profit Sharing",
+        "description": ""
+      },
+      "mixedTwoPersons": {
+        "title": "Mixed Program for Two Persons with Profit Sharing",
+        "description": ""
+      }
+    }
+  }
+}

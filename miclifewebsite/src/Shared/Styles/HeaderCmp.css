@@ -1,0 +1,17 @@
+/* Default Link Styling */
+.nav-link {
+  font-size: 1.125rem; /* Equivalent to text-lg */
+  color: #9a9898; /* Default text color */
+  text-decoration: none;
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.nav-link:hover {
+  color: var(--hover-color); /* Use your theme color */
+}
+
+/* Active Link Styling */
+.nav-link.active {
+  color: var(--active-color); /* Active link color */
+}

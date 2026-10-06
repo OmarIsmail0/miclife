@@ -1,0 +1,25 @@
+.contactRoot {
+    position: relative;
+    background-color: #145628;
+    min-height: 51vh;
+  }
+  
+  @media (min-width: 1024px) {
+    .contactRoot {
+      background-color: transparent;
+    }
+    .contactRoot::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url('/assets/miclife/contactus-bg.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    .contactRoot > * {
+      position: relative; /* ensure children sit above background */
+      z-index: 1;
+    }
+  }
+  

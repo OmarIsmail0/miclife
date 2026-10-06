@@ -1,0 +1,25 @@
+.dynamic-hover {
+  color: var(--primary-color, gray);
+  transition: color 0.2s ease-in-out;
+}
+
+.dynamic-hover:hover {
+  color: var(--secondary-color, indigo);
+}
+
+.dynamicBtn-hover {
+  background-color: var(--primary-color, gray);
+  color: white;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.dynamicBtn-hover:hover {
+  background-color: var(--secondary-color, indigo);
+  color: white;
+}
+
+.dynamicBtn-hover.active {
+  background-color: var(--secondary-color, indigo);
+  color: white;
+}
