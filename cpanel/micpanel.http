@@ -1,0 +1,6 @@
+@micpanel_HostAddress = http://localhost:5226
+
+GET {{micpanel_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,4515 @@
+{
+	"info": {
+		"_postman_id": "ee12e584-ce7a-445a-8f24-f687f49cb941",
+		"name": "WebMohandes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7678200",
+		"_collection_link": "https://universal-firefly-345343.postman.co/workspace/MIC~24456dba-652a-4d48-8e6d-7444ba4cb5d0/collection/7678200-ee12e584-ce7a-445a-8f24-f687f49cb941?action=share&source=collection_link&creator=7678200"
+	},
+	"item": [
+		{
+			"name": "Authorization",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullname\": \"Mohamded abdelsameaa mohamed saeed\",\r\n    \"username\": \"Mohamed\",\r\n    \"email\": \"Mohamed.abdelsameaa@mohinspro.com\",\r\n    \"password\": \"Mo@123456\"\r\n    // \"code\":\"438358\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5226/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5226",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"mohamed.abdelsameaa@mohinspro.com\",\r\n    \"password\": \"Mo@12345\"\r\n    // \"username\": \"Mohamed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://cpanel.mic.org/api/auth/token",
+							"protocol": "https",
+							"host": [
+								"cpanel",
+								"mic",
+								"org"
+							],
+							"path": [
+								"api",
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMjA0YTRmMWMtYjEzMC00MDQyLTkyODktZDgzYTFlYTQ4ZDU3IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY5MzI1NjQxLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.wHg8AtJ_kJz1RqMESgulsQoVn_-etVwpNvJ6diuwNbY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5226/api/auth/blacklist-token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5226",
+							"path": [
+								"api",
+								"auth",
+								"blacklist-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2FactorAuth",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"mohamed.abdelsameaa@mohinspro.com\",\r\n    \"code\":\"455153\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5226/api/auth/verifiy2FA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5226",
+							"path": [
+								"api",
+								"auth",
+								"verifiy2FA"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "GetAllRoles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMjA0YTRmMWMtYjEzMC00MDQyLTkyODktZDgzYTFlYTQ4ZDU3IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY5MzI1NjQxLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.wHg8AtJ_kJz1RqMESgulsQoVn_-etVwpNvJ6diuwNbY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5226/api/auth/GetRoles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5226",
+							"path": [
+								"api",
+								"auth",
+								"GetRoles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5226/api/auth/GetUserId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5226",
+							"path": [
+								"api",
+								"auth",
+								"GetUserId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UnAssignRole",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UserId\":\"47f54afd-e99f-4821-9526-e6d27c18499a\",\r\n    \"Role\":\"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5226/api/auth/UnAssignRole",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5226",
+							"path": [
+								"api",
+								"auth",
+								"UnAssignRole"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AssignRole",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UserId\":\"47f54afd-e99f-4821-9526-e6d27c18499a\",\r\n    \"Role\":\"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5226/api/auth/AssignRole",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5226",
+							"path": [
+								"api",
+								"auth",
+								"AssignRole"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Documents",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"PageNumber\":1,\r\n    \"PageSize\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/document/getall",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"document",
+								"getall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GeById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5226/api/document/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5226",
+							"path": [
+								"api",
+								"document",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "download",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5226/api/document/download/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5226",
+							"path": [
+								"api",
+								"document",
+								"download",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "document exist by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5226/api/exists1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5226",
+							"path": [
+								"api",
+								"exists1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by Tag",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5226/api/document/tags/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5226",
+							"path": [
+								"api",
+								"document",
+								"tags",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Documents By Entity",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"EntityType\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5226/api/document/entity",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5226",
+							"path": [
+								"api",
+								"document",
+								"entity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Document",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "File",
+									"type": "file",
+									"src": "/C:/Users/modma/OneDrive/Desktop/Group 10.svg"
+								},
+								{
+									"key": "Description",
+									"value": " motor file",
+									"type": "text"
+								},
+								{
+									"key": "EntityType",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "UploadedByName",
+									"value": "mohamed ashraf",
+									"type": "text"
+								},
+								{
+									"key": "IsPublic",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "Tags",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5226/api/document",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5226",
+							"path": [
+								"api",
+								"document"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload multiple",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Files",
+									"type": "file",
+									"src": [
+										"/C:/Users/modma/OneDrive/Pictures/Screenshots/Screenshot 2025-08-17 100202.png",
+										"/C:/Users/modma/OneDrive/Pictures/Screenshots/Screenshot 2025-08-17 100553.png",
+										"/C:/Users/modma/OneDrive/Pictures/Screenshots/Screenshot 2025-08-17 100901.png",
+										"/C:/Users/modma/OneDrive/Pictures/Screenshots/Screenshot 2025-08-17 101022.png",
+										"/C:/Users/modma/OneDrive/Pictures/Screenshots/Screenshot 2025-08-17 102008.png",
+										"/C:/Users/modma/OneDrive/Pictures/Screenshots/Screenshot 2025-08-17 103319.png",
+										"/C:/Users/modma/OneDrive/Pictures/Screenshots/Screenshot 2025-08-17 104223.png",
+										"/C:/Users/modma/OneDrive/Pictures/Screenshots/Screenshot 2025-08-17 100202.png",
+										"/C:/Users/modma/OneDrive/Pictures/Screenshots/Screenshot 2025-08-17 100553.png",
+										"/C:/Users/modma/OneDrive/Pictures/Screenshots/Screenshot 2025-08-17 100901.png",
+										"/C:/Users/modma/OneDrive/Pictures/Screenshots/Screenshot 2025-08-17 101022.png",
+										"/C:/Users/modma/OneDrive/Pictures/Screenshots/Screenshot 2025-08-17 102008.png",
+										"/C:/Users/modma/OneDrive/Pictures/Screenshots/Screenshot 2025-08-17 103319.png",
+										"/C:/Users/modma/OneDrive/Pictures/Screenshots/Screenshot 2025-08-17 104223.png",
+										"/C:/Users/modma/OneDrive/Pictures/Screenshots/Screenshot 2025-08-17 112434.png",
+										"/C:/Users/modma/OneDrive/Pictures/Screenshots/Screenshot 2025-08-18 083649.png",
+										"/C:/Users/modma/OneDrive/Pictures/Screenshots/Screenshot 2025-08-18 152431.png",
+										"/C:/Users/modma/OneDrive/Pictures/Screenshots/Screenshot 2025-08-18 153120.png",
+										"/C:/Users/modma/OneDrive/Pictures/Screenshots/Screenshot 2025-08-18 194511.png",
+										"/C:/Users/modma/OneDrive/Pictures/Screenshots/Screenshot 2025-08-18 194655.png"
+									]
+								},
+								{
+									"key": "Description",
+									"value": "this is a sample description",
+									"type": "text"
+								},
+								{
+									"key": "EntityType",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "UploadedByName",
+									"value": "mohamed ashraf",
+									"type": "text"
+								},
+								{
+									"key": "IsPublic",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "Tags",
+									"value": "News",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5226/api/document/upload-multiple",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5226",
+							"path": [
+								"api",
+								"document",
+								"upload-multiple"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Document",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "File",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "Description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "EntityType",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "UploadedByName",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "IsPublic",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "Tags",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5226/api/document/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5226",
+							"path": [
+								"api",
+								"document",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Soft Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "File",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "Description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "EntityType",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "UploadedByName",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "IsPublic",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "Tags",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5226/api/Document/3/softdelete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5226",
+							"path": [
+								"api",
+								"Document",
+								"3",
+								"softdelete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"SearchTerm\":\"BLUE_aaa\",\r\n    \"PageNumber\":1,\r\n    \"PageSize\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/Document/search",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"Document",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Albums",
+			"item": [
+				{
+					"name": "Get All Albums",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/album/getall?languageCode=en",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"album",
+								"getall"
+							],
+							"query": [
+								{
+									"key": "languageCode",
+									"value": "en",
+									"description": "Optional: en or ar"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Album By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/album/1?languageCode=ar",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"album",
+								"1"
+							],
+							"query": [
+								{
+									"key": "languageCode",
+									"value": "ar",
+									"description": "Optional: en or ar"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Album",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"DisplayOrder\": 0,\r\n    \"IsActive\": true,\r\n    \"Type\": 3,\r\n    \"Translations\": [\r\n        {\r\n            \"LanguageCode\": \"en\",\r\n            \"Name\": \"Summer Album\",\r\n            \"Description\": \"Beautiful summer photos\"\r\n        },\r\n        {\r\n            \"LanguageCode\": \"ar\",\r\n            \"Name\": \"ألبوم الصيف\",\r\n            \"Description\": \"صور صيفية جميلة\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/album/create",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"album",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Album",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\": 1,\r\n    \"DisplayOrder\": 0,\r\n    \"Type\": 1,\r\n    \"IsActive\": true,\r\n    \"Translations\": [\r\n        {\r\n            \"Id\": 1,\r\n            \"LanguageCode\": \"en\",\r\n            \"Name\": \"Updated Summer Album\",\r\n            \"Description\": \"Updated summer photos\"\r\n        },\r\n        {\r\n            \"Id\": 2,\r\n            \"LanguageCode\": \"ar\",\r\n            \"Name\": \"ألبوم الصيف المحدث\",\r\n            \"Description\": \"صور صيفية محدثة\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/album/update",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"album",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Album",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/album/1",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"album",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Images to Album",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"description": "Add multiple files (max 20 files, 200MB total)",
+									"type": "file",
+									"src": [
+										"/C:/Users/modma/OneDrive/Pictures/Screenshots/Screenshot 2025-08-17 100202.png",
+										"/C:/Users/modma/OneDrive/Pictures/Screenshots/Screenshot 2025-08-17 100553.png",
+										"/C:/Users/modma/OneDrive/Pictures/Screenshots/Screenshot 2025-08-17 100901.png",
+										"/C:/Users/modma/OneDrive/Pictures/Screenshots/Screenshot 2025-08-17 101022.png",
+										"/C:/Users/modma/OneDrive/Pictures/Screenshots/Screenshot 2025-08-17 102008.png",
+										"/C:/Users/modma/OneDrive/Pictures/Screenshots/Screenshot 2025-08-17 103319.png",
+										"/C:/Users/modma/OneDrive/Pictures/Screenshots/Screenshot 2025-08-17 104223.png"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Host}}/album/1/upload-images",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"album",
+								"1",
+								"upload-images"
+							]
+						},
+						"description": "Upload multiple images to an album. Add multiple 'files' entries in form-data (max 20 files, 200MB total). Images will be linked to the album via Tags field."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contents",
+			"item": [
+				{
+					"name": "Line of business",
+					"item": [
+						{
+							"name": "Ge All Lob",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"IsActive\": true,\r\n    \"PageNumber\":1,\r\n    \"PageSize\":10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/ContentManage/lob/getall",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"ContentManage",
+										"lob",
+										"getall"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Lob",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Slug\": \"Motor\",\r\n    \"IconUrl\":\"test url\",\r\n    \"ImageUrl\":\"test url\",\r\n    \"IsActive\":true,\r\n    \"DisplayOrder\":1,\r\n    \"Translations\":[\r\n        {\r\n            \"LanguageCode\":\"en\",\r\n            \"Name\":\"motor insurance\",\r\n            \"Description\":\"this is motor insurance lob\"\r\n        },\r\n        {\r\n            \"LanguageCode\":\"ar\",\r\n            \"Name\":\"سيارات\",\r\n            \"Description\":\"سيارات تأمين\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/lob/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"lob",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get lob by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Slug\": \"ABOUT-US\",\r\n    \"SectionKey\":\"ABOUT-US\",\r\n    \"ImageUrl\":\"test url\",\r\n    \"IsActive\":true,\r\n    \"Translations\":[\r\n        {\r\n            \"LanguageCode\":\"en\",\r\n            \"Title\":\"About us\",\r\n            \"Content\":\"this is for about us\",\r\n            \"SEO_Title\":\"\",\r\n            \"SEO_Description\":\"\"\r\n        },\r\n        {\r\n            \"LanguageCode\":\"ar\",\r\n            \"Title\":\"عن الشركة\",\r\n            \"Content\":\"تفاصيل عن الشركة\",\r\n            \"SEO_Title\":\"\",\r\n            \"SEO_Description\":\"\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/lob/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"lob",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get lob by Slug",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Slug\": \"ABOUT-US\",\r\n    \"SectionKey\":\"ABOUT-US\",\r\n    \"ImageUrl\":\"test url\",\r\n    \"IsActive\":true,\r\n    \"Translations\":[\r\n        {\r\n            \"LanguageCode\":\"en\",\r\n            \"Title\":\"About us\",\r\n            \"Content\":\"this is for about us\",\r\n            \"SEO_Title\":\"\",\r\n            \"SEO_Description\":\"\"\r\n        },\r\n        {\r\n            \"LanguageCode\":\"ar\",\r\n            \"Title\":\"عن الشركة\",\r\n            \"Content\":\"تفاصيل عن الشركة\",\r\n            \"SEO_Title\":\"\",\r\n            \"SEO_Description\":\"\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/lob/slug/Motor",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"lob",
+										"slug",
+										"Motor"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update lob by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"Id\":1,\r\n   \"Slug\":\"\",\r\n   \"IconUrl\":\"\",\r\n    \"ImageUrl\":\"test url\",\r\n   \"IsActive\":\"\",\r\n   \"DisplayOrder\":1,\r\n   \"Translations\":[ // optional\r\n    {\r\n        \"id\":\"\",\r\n        \"LanguageCode\":\"\",\r\n        \"Name\":\"\",\r\n        \"Description\":\"\"\r\n    }\r\n   ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/lob/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"lob",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete lob by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"Id\":1,\r\n   \"Slug\":\"\",\r\n   \"IconUrl\":\"\",\r\n   \"IsActive\":\"\",\r\n   \"DisplayOrder\":1,\r\n   \"Translations\":[ // optional\r\n    {\r\n        \"id\":\"\",\r\n        \"LanguageCode\":\"\",\r\n        \"Name\":\"\",\r\n        \"Description\":\"\"\r\n    }\r\n   ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/lob/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"lob",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "De-active lob",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "true",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/lob/1/toggle-status",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"lob",
+										"1",
+										"toggle-status"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Products",
+					"item": [
+						{
+							"name": "Ge All Product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"IsActive\": true,\r\n    \"PageNumber\":1,\r\n    \"PageSize\":10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/ContentManage/product/getall",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"ContentManage",
+										"product",
+										"getall"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"LOBId\": 1,\r\n    \"Slug\": \"test slug\",\r\n    \"ImageUrl\": \"url\",\r\n    \"DisplayOrder\": 1,\r\n    \"IsActive\": true,\r\n    \"Translations\": [\r\n        {\r\n            \"LanguageCode\": \"en\",\r\n            \"Name\": \"Comprehensive\",\r\n            \"ShortDescription\": \"Motor\",\r\n            \"FullDescription\": \"Full descrption test\",\r\n            \"SEO_Title\": \"\",\r\n            \"SEO_Description\": \"\"\r\n        },\r\n        {\r\n            \"LanguageCode\": \"en\",\r\n            \"Name\": \"تكميلى\",\r\n            \"ShortDescription\": \"سيارات تكميلى\",\r\n            \"FullDescription\": \"شرح تكمياى كامل\",\r\n            \"SEO_Title\": \"\",\r\n            \"SEO_Description\": \"\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/ContentManage/product/create",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"ContentManage",
+										"product",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get product by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Slug\": \"ABOUT-US\",\r\n    \"SectionKey\":\"ABOUT-US\",\r\n    \"ImageUrl\":\"test url\",\r\n    \"IsActive\":true,\r\n    \"Translations\":[\r\n        {\r\n            \"LanguageCode\":\"en\",\r\n            \"Title\":\"About us\",\r\n            \"Content\":\"this is for about us\",\r\n            \"SEO_Title\":\"\",\r\n            \"SEO_Description\":\"\"\r\n        },\r\n        {\r\n            \"LanguageCode\":\"ar\",\r\n            \"Title\":\"عن الشركة\",\r\n            \"Content\":\"تفاصيل عن الشركة\",\r\n            \"SEO_Title\":\"\",\r\n            \"SEO_Description\":\"\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/product/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"product",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get product by lob",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Slug\": \"ABOUT-US\",\r\n    \"SectionKey\":\"ABOUT-US\",\r\n    \"ImageUrl\":\"test url\",\r\n    \"IsActive\":true,\r\n    \"Translations\":[\r\n        {\r\n            \"LanguageCode\":\"en\",\r\n            \"Title\":\"About us\",\r\n            \"Content\":\"this is for about us\",\r\n            \"SEO_Title\":\"\",\r\n            \"SEO_Description\":\"\"\r\n        },\r\n        {\r\n            \"LanguageCode\":\"ar\",\r\n            \"Title\":\"عن الشركة\",\r\n            \"Content\":\"تفاصيل عن الشركة\",\r\n            \"SEO_Title\":\"\",\r\n            \"SEO_Description\":\"\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/ContentManage/product/lob/1",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"ContentManage",
+										"product",
+										"lob",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get product by slug",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Slug\": \"ABOUT-US\",\r\n    \"SectionKey\":\"ABOUT-US\",\r\n    \"ImageUrl\":\"test url\",\r\n    \"IsActive\":true,\r\n    \"Translations\":[\r\n        {\r\n            \"LanguageCode\":\"en\",\r\n            \"Title\":\"About us\",\r\n            \"Content\":\"this is for about us\",\r\n            \"SEO_Title\":\"\",\r\n            \"SEO_Description\":\"\"\r\n        },\r\n        {\r\n            \"LanguageCode\":\"ar\",\r\n            \"Title\":\"عن الشركة\",\r\n            \"Content\":\"تفاصيل عن الشركة\",\r\n            \"SEO_Title\":\"\",\r\n            \"SEO_Description\":\"\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/product/slug/test slug",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"product",
+										"slug",
+										"test slug"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update product by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"LOBId\": 1,\r\n    \"Slug\": \"test slug\",\r\n    \"ImageUrl\": \"url\",\r\n    \"DisplayOrder\": 1,\r\n    \"IsActive\": true,\r\n    \"Translations\": [\r\n        {\r\n            \"id\": 1,\r\n            \"LanguageCode\": \"en\",\r\n            \"Name\": \"Comprehensive\",\r\n            \"ShortDescription\": \"Motor\",\r\n            \"FullDescription\": \"Full descrption test\",\r\n            \"SEO_Title\": \"\",\r\n            \"SEO_Description\": \"\"\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"LanguageCode\": \"en\",\r\n            \"Name\": \"تكميلى\",\r\n            \"ShortDescription\": \"سيارات تكميلى\",\r\n            \"FullDescription\": \"شرح تكمياى كامل\",\r\n            \"SEO_Title\": \"\",\r\n            \"SEO_Description\": \"\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/ContentManage/product/update",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"ContentManage",
+										"product",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete product by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"Id\":1,\r\n   \"Slug\":\"\",\r\n   \"IconUrl\":\"\",\r\n   \"IsActive\":\"\",\r\n   \"DisplayOrder\":1,\r\n   \"Translations\":[ // optional\r\n    {\r\n        \"id\":\"\",\r\n        \"LanguageCode\":\"\",\r\n        \"Name\":\"\",\r\n        \"Description\":\"\"\r\n    }\r\n   ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/product/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"product",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "De-active product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "true",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/product/1/toggle-status",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"product",
+										"1",
+										"toggle-status"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Sections",
+					"item": [
+						{
+							"name": "Ge All Sections",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"IsActive\": true,\r\n    \"PageNumber\":1,\r\n    \"PageSize\":10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/ContentManage/section/getall",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"ContentManage",
+										"section",
+										"getall"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Section",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Slug\": \"ABOUT-US\",\r\n    \"SectionKey\":\"ABOUT-US\",\r\n    \"ImageUrl\":\"test url\",\r\n    \"IsActive\":true,\r\n    \"Translations\":[\r\n        {\r\n            \"LanguageCode\":\"en\",\r\n            \"Title\":\"About us\",\r\n            \"Content\":\"this is for about us\",\r\n            \"SEO_Title\":\"\",\r\n            \"SEO_Description\":\"\"\r\n        },\r\n        {\r\n            \"LanguageCode\":\"ar\",\r\n            \"Title\":\"عن الشركة\",\r\n            \"Content\":\"تفاصيل عن الشركة\",\r\n            \"SEO_Title\":\"\",\r\n            \"SEO_Description\":\"\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/section/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"section",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Section by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Slug\": \"ABOUT-US\",\r\n    \"SectionKey\":\"ABOUT-US\",\r\n    \"ImageUrl\":\"test url\",\r\n    \"IsActive\":true,\r\n    \"Translations\":[\r\n        {\r\n            \"LanguageCode\":\"en\",\r\n            \"Title\":\"About us\",\r\n            \"Content\":\"this is for about us\",\r\n            \"SEO_Title\":\"\",\r\n            \"SEO_Description\":\"\"\r\n        },\r\n        {\r\n            \"LanguageCode\":\"ar\",\r\n            \"Title\":\"عن الشركة\",\r\n            \"Content\":\"تفاصيل عن الشركة\",\r\n            \"SEO_Title\":\"\",\r\n            \"SEO_Description\":\"\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/section/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"section",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Section by Key",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Slug\": \"ABOUT-US\",\r\n    \"SectionKey\":\"ABOUT-US\",\r\n    \"ImageUrl\":\"test url\",\r\n    \"IsActive\":true,\r\n    \"Translations\":[\r\n        {\r\n            \"LanguageCode\":\"en\",\r\n            \"Title\":\"About us\",\r\n            \"Content\":\"this is for about us\",\r\n            \"SEO_Title\":\"\",\r\n            \"SEO_Description\":\"\"\r\n        },\r\n        {\r\n            \"LanguageCode\":\"ar\",\r\n            \"Title\":\"عن الشركة\",\r\n            \"Content\":\"تفاصيل عن الشركة\",\r\n            \"SEO_Title\":\"\",\r\n            \"SEO_Description\":\"\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/section/key/ABOUT-US",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"section",
+										"key",
+										"ABOUT-US"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Section by Slug",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Slug\": \"ABOUT-US\",\r\n    \"SectionKey\":\"ABOUT-US\",\r\n    \"ImageUrl\":\"test url\",\r\n    \"IsActive\":true,\r\n    \"Translations\":[\r\n        {\r\n            \"LanguageCode\":\"en\",\r\n            \"Title\":\"About us\",\r\n            \"Content\":\"this is for about us\",\r\n            \"SEO_Title\":\"\",\r\n            \"SEO_Description\":\"\"\r\n        },\r\n        {\r\n            \"LanguageCode\":\"ar\",\r\n            \"Title\":\"عن الشركة\",\r\n            \"Content\":\"تفاصيل عن الشركة\",\r\n            \"SEO_Title\":\"\",\r\n            \"SEO_Description\":\"\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/ContentManage/section/slug/ABOUT-US",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"ContentManage",
+										"section",
+										"slug",
+										"ABOUT-US"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update section by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"Id\":1,\r\n   \"SectionKey\":\"\",\r\n   \"Slug\":\"\",\r\n   \"ImageUrl\":\"\",\r\n   \"IsActive\":\"\",\r\n   \"Translations\":[ // optional\r\n    {\r\n        \"id\":\"\",\r\n        \"LanguageCode\":\"\",\r\n        \"Title\":\"\",\r\n        \"Content\":\"\",\r\n        \"SEO_Title\":\"\",\r\n        \"SEO_Description\":\"\"\r\n    }\r\n   ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/section/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"section",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "De-active section",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "true",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/section/1/toggle-status",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"section",
+										"1",
+										"toggle-status"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete section by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"Id\":1,\r\n   \"Slug\":\"\",\r\n   \"IconUrl\":\"\",\r\n   \"IsActive\":\"\",\r\n   \"DisplayOrder\":1,\r\n   \"Translations\":[ // optional\r\n    {\r\n        \"id\":\"\",\r\n        \"LanguageCode\":\"\",\r\n        \"Name\":\"\",\r\n        \"Description\":\"\"\r\n    }\r\n   ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/section/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"section",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Questions",
+					"item": [
+						{
+							"name": "Ge All Questions",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"IsActive\": true,\r\n    \"PageNumber\":1,\r\n    \"PageSize\":10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/question/getall",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"question",
+										"getall"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Question",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"QuestionText\": \"ABOUT-US\",\r\n    \"Answer\":\"ABOUT-US\",\r\n    \"DisplayOrder\": 1,\r\n    \"IsActive\":true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/question/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"question",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Question by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Slug\": \"ABOUT-US\",\r\n    \"SectionKey\":\"ABOUT-US\",\r\n    \"ImageUrl\":\"test url\",\r\n    \"IsActive\":true,\r\n    \"Translations\":[\r\n        {\r\n            \"LanguageCode\":\"en\",\r\n            \"Title\":\"About us\",\r\n            \"Content\":\"this is for about us\",\r\n            \"SEO_Title\":\"\",\r\n            \"SEO_Description\":\"\"\r\n        },\r\n        {\r\n            \"LanguageCode\":\"ar\",\r\n            \"Title\":\"عن الشركة\",\r\n            \"Content\":\"تفاصيل عن الشركة\",\r\n            \"SEO_Title\":\"\",\r\n            \"SEO_Description\":\"\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/question/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"question",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update question by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"QuestionText\": \"ABOUT-US\",\r\n    \"Answer\":\"ABOUT-UStest\",\r\n    \"DisplayOrder\": 1,\r\n    \"IsActive\":true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/question/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"question",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "De-active Question",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "true",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/question/1/toggle-status",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"question",
+										"1",
+										"toggle-status"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete Question by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"Id\":1,\r\n   \"Slug\":\"\",\r\n   \"IconUrl\":\"\",\r\n   \"IsActive\":\"\",\r\n   \"DisplayOrder\":1,\r\n   \"Translations\":[ // optional\r\n    {\r\n        \"id\":\"\",\r\n        \"LanguageCode\":\"\",\r\n        \"Name\":\"\",\r\n        \"Description\":\"\"\r\n    }\r\n   ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/question/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"question",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Investor",
+					"item": [
+						{
+							"name": "Ge All Innvestors",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"IsActive\": true,\r\n    \"PageNumber\":1,\r\n    \"PageSize\":10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/innvestore/getall",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"innvestore",
+										"getall"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add innvestore",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Title\": \"ABOUT-US\",\r\n    \"TitleAr\": \"ABOUT-US\",\r\n    \"UrlFrm\":\"ABOUT-US\",\r\n    \"UrlFrmAr\":\"ABOUT-US\",\r\n    \"ImageUrl\": \"Test url\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/innvestore/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"innvestore",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update innvestore by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":1,\r\n    \"Title\": \"ABOUT-US test\",\r\n    \"TitleAr\": \"ABOUT-US test\",\r\n    \"UrlFrm\":\"ABOUT-US\",\r\n    \"UrlFrmAr\":\"ABOUT-US\",\r\n    \"ImageUrl\": \"Test url\"\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/innvestore/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"innvestore",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete investore",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Title\": \"ABOUT-US\",\r\n    \"UrlFrm\":\"ABOUT-US\",\r\n    \"ImageUrl\": \"Test url\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/innvestore/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"innvestore",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update innvestore by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":1,\r\n    \"Title\": \"ABOUT-US test\",\r\n    \"TitleAr\": \"ABOUT-US test\",\r\n    \"UrlFrm\":\"ABOUT-US\",\r\n    \"UrlFrmAr\":\"ABOUT-US\",\r\n    \"ImageUrl\": \"Test url\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/innvestore/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"innvestore",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Branch",
+					"item": [
+						{
+							"name": "Get All Branches",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"PageNumber\":1,\r\n    \"PageSize\":10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/ContentManage/branch/getall",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"ContentManage",
+										"branch",
+										"getall"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Branch By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/branch/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"branch",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Branch",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Title\": \"Branch Title\",\r\n    \"Descrption\": \"Branch Description\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/branch/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"branch",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Branch",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Id\": 1,\r\n    \"Title\": \"Updated Branch Title\",\r\n    \"Descrption\": \"Updated Branch Description\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/branch/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"branch",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Branch",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/branch/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"branch",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "ShareHolder",
+					"item": [
+						{
+							"name": "Get All ShareHolders",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"PageNumber\":1,\r\n    \"PageSize\":10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/ContentManage/shareholder/getall",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"ContentManage",
+										"shareholder",
+										"getall"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get ShareHolder By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/shareholder/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"shareholder",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add ShareHolder",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Title\": \"ShareHolder Title\",\r\n    \"Descrption\": \"ShareHolder Description\",\r\n    \"ImageUrl\": \"https://example.com/image.jpg\",\r\n    \"DisplayOrder\": 1,\r\n    \"Share\": \"50%\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/shareholder/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"shareholder",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update ShareHolder",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Id\": 1,\r\n    \"Title\": \"Updated ShareHolder Title\",\r\n    \"Descrption\": \"Updated ShareHolder Description\",\r\n    \"ImageUrl\": \"https://example.com/updated-image.jpg\",\r\n    \"DisplayOrder\": 2,\r\n    \"Share\": \"60%\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/shareholder/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"shareholder",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete ShareHolder",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/shareholder/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"shareholder",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "BoardMember",
+					"item": [
+						{
+							"name": "Get All BoardMembers",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"PageNumber\":1,\r\n    \"PageSize\":10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/ContentManage/boardmember/getall",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"ContentManage",
+										"boardmember",
+										"getall"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get BoardMember By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/boardmember/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"boardmember",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add BoardMember",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\": \"John Doe\",\r\n    \"Title\": \"CEO\",\r\n    \"ImageUrl\": \"https://example.com/image.jpg\",\r\n    \"IconUrl\": \"https://example.com/icon.jpg\",\r\n    \"Description\": \"Board member description\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/boardmember/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"boardmember",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update BoardMember",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Id\": 1,\r\n    \"Name\": \"Jane Doe\",\r\n    \"Title\": \"CTO\",\r\n    \"ImageUrl\": \"https://example.com/updated-image.jpg\",\r\n    \"IconUrl\": \"https://example.com/updated-icon.jpg\",\r\n    \"Description\": \"Updated board member description\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/boardmember/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"boardmember",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete BoardMember",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/boardmember/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"boardmember",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Blocks",
+					"item": [
+						{
+							"name": "Get All Blocks",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"IsActive\": true,\r\n    \"PageNumber\":1,\r\n    \"PageSize\":10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/ContentManage/block/getall",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"ContentManage",
+										"block",
+										"getall"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Block",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Slug\": \"about-us-block\",\r\n    \"ImageUrl\": \"https://example.com/image.jpg\",\r\n    \"DisplayOrder\": 1,\r\n    \"IsActive\": true,\r\n    \"Translations\": [\r\n        {\r\n            \"LanguageCode\": \"en\",\r\n            \"Title\": \"About Us Block\",\r\n            \"Description\": \"This is a description of the about us block\",\r\n            \"SEO_Title\": \"About Us\",\r\n            \"SEO_Description\": \"Learn more about us\"\r\n        },\r\n        {\r\n            \"LanguageCode\": \"ar\",\r\n            \"Title\": \"عن الشركة\",\r\n            \"Description\": \"هذا وصف كتلة عن الشركة\",\r\n            \"SEO_Title\": \"عن الشركة\",\r\n            \"SEO_Description\": \"تعرف علينا أكثر\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/ContentManage/block/create",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"ContentManage",
+										"block",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Block by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/block/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"block",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Block by Slug",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/ContentManage/block/slug/about-us-block",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"ContentManage",
+										"block",
+										"slug",
+										"about-us-block"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update block by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Id\": 1,\r\n    \"Slug\": \"about-us-block-updated\",\r\n    \"ImageUrl\": \"https://example.com/image-updated.jpg\",\r\n    \"DisplayOrder\": 1,\r\n    \"IsActive\": true,\r\n    \"Translations\": [\r\n        {\r\n            \"LanguageCode\": \"en\",\r\n            \"Title\": \"About Us Block Updated\",\r\n            \"Description\": \"Updated description of the about us block\",\r\n            \"SEO_Title\": \"About Us\",\r\n            \"SEO_Description\": \"Learn more about us\"\r\n        },\r\n        {\r\n            \"LanguageCode\": \"ar\",\r\n            \"Title\": \"عن الشركة محدث\",\r\n            \"Description\": \"وصف محدث لكتلة عن الشركة\",\r\n            \"SEO_Title\": \"عن الشركة\",\r\n            \"SEO_Description\": \"تعرف علينا أكثر\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/block/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"block",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete block by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/block/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"block",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "De-active block",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "true",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/ContentManage/block/1/toggle-status",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"ContentManage",
+										"block",
+										"1",
+										"toggle-status"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Section-Block Relationships",
+					"item": [
+						{
+							"name": "Get Blocks by Section ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Host}}/ContentManage/section/1/blocks",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"ContentManage",
+										"section",
+										"1",
+										"blocks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Sections by Block ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Host}}/ContentManage/block/1/sections",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"ContentManage",
+										"block",
+										"1",
+										"sections"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Assign Blocks to Section",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"SectionId\": 1,\r\n    \"BlockIds\": [1, 2, 3]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/ContentManage/section/assign-blocks",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"ContentManage",
+										"section",
+										"assign-blocks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Assign Sections to Block",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"BlockId\": 1,\r\n    \"SectionIds\": [1, 2]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/ContentManage/block/assign-sections",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"ContentManage",
+										"block",
+										"assign-sections"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove Block from Section",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{Host}}/ContentManage/section/1/block/1",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"ContentManage",
+										"section",
+										"1",
+										"block",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Section Block Order",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "5",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/ContentManage/section-block/1/order",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"ContentManage",
+										"section-block",
+										"1",
+										"order"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Catalogs",
+			"item": [
+				{
+					"name": "Entity Types",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"IsActive\": true,\r\n    \"PageNumber\":1,\r\n    \"PageSize\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/ContentManage/catalog/entity-types",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"ContentManage",
+								"catalog",
+								"entity-types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ticket statues",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"IsActive\": true,\r\n    \"PageNumber\":1,\r\n    \"PageSize\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/ContentManage/catalog/ticket-status",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"ContentManage",
+								"catalog",
+								"ticket-status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ticket Types",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"IsActive\": true,\r\n    \"PageNumber\":1,\r\n    \"PageSize\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/ContentManage/catalog/ticket-type",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"ContentManage",
+								"catalog",
+								"ticket-type"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Media Types",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"IsActive\": true,\r\n    \"PageNumber\":1,\r\n    \"PageSize\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/ContentManage/catalog/media-type",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"ContentManage",
+								"catalog",
+								"media-type"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tickets",
+			"item": [
+				{
+					"name": "Ge All Tickets",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"TicketType\": null,\r\n    // \"TicketStatus\": null,\r\n    // \"Email\": null,\r\n    \"PageNumber\": 1,\r\n    \"PageSize\": 100000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/ticketmanagement/ticket/getall",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"ticketmanagement",
+								"ticket",
+								"getall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Ticket by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5226/api/ticketmanagement/ticket/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5226",
+							"path": [
+								"api",
+								"ticketmanagement",
+								"ticket",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Ticket",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Title\": \"Support Request\",\r\n    \"Description\": \"Need help with account setup\",\r\n    \"Email\": \"user@example.com\",\r\n    \"Phone\": \"+1234567890\",\r\n    \"isForm\":false,\r\n    \"TicketType\": 5,\r\n    \"TicketStatus\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5226/api/ticketmanagement/ticket/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5226",
+							"path": [
+								"api",
+								"ticketmanagement",
+								"ticket",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update ticket by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\": 1,\r\n    \"Title\": \"Support Request Updated\",\r\n    \"Description\": \"Updated description\",\r\n    \"Email\": \"user@example.com\",\r\n    \"Phone\": \"+1234567890\",\r\n    \"TicketType\": 5,\r\n    \"TicketStatus\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5226/api/ticketmanagement/ticket/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5226",
+							"path": [
+								"api",
+								"ticketmanagement",
+								"ticket",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete ticket by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5226/api/ticketmanagement/ticket/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5226",
+							"path": [
+								"api",
+								"ticketmanagement",
+								"ticket",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Ticket Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "2",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5226/api/ticketmanagement/ticket/1/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5226",
+							"path": [
+								"api",
+								"ticketmanagement",
+								"ticket",
+								"1",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Ticket Activities",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5226/api/ticketmanagement/ticket/1/activities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5226",
+							"path": [
+								"api",
+								"ticketmanagement",
+								"ticket",
+								"1",
+								"activities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Ticket Activity",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"TicketId\": 1,\r\n    \"TicketComment\": \"This is a comment on the ticket\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5226/api/ticketmanagement/ticket-activity/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5226",
+							"path": [
+								"api",
+								"ticketmanagement",
+								"ticket-activity",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update ticket activity by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\": 1,\r\n    \"TicketId\": 1,\r\n    \"TicketComment\": \"Updated comment on the ticket\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5226/api/ticketmanagement/ticket-activity/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5226",
+							"path": [
+								"api",
+								"ticketmanagement",
+								"ticket-activity",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete ticket activity by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb2hhbWVkIiwianRpIjoiMWIxZjNlODktZDk2ZS00ZmEzLTljODYtZjc0NWZmNDU4NWQ4IiwiZW1haWwiOiJNb2hhbWVkLmFiZGVsc2FtZWFhQG1vaGluc3Byby5jb20iLCJ1aWQiOiI0N2Y1NGFmZC1lOTlmLTQ4MjEtOTUyNi1lNmQyN2MxODQ5OWEiLCJmdWxsbmFtZSI6Ik1vaGFtZGVkIGFiZGVsc2FtZWFhIG1vaGFtZWQgc2FlZWQiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwiZXhwIjoxNzY4OTQ0OTkyLCJpc3MiOiJTZWN1cmVNSUNBcGkiLCJhdWQiOiJTZWN1cmVNSUNBcGlVc2VyIn0.ub7E48OYuLdZiUyuJMjArITMsaK7n8sC6V9dLow5DK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5226/api/ticketmanagement/ticket-activity/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5226",
+							"path": [
+								"api",
+								"ticketmanagement",
+								"ticket-activity",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quote",
+			"item": [
+				{
+					"name": "QuoteTemplate",
+					"item": [
+						{
+							"name": "Get All Quote Templates",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"PageNumber\": 1,\r\n    \"PageSize\": 10,\r\n    \"Type\": null,\r\n    \"Replied\": null,\r\n    \"isActive\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/quote/quote-template/getall",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"quote",
+										"quote-template",
+										"getall"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Quote Template By ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5226/api/quote/quote-template/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"quote",
+										"quote-template",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Quote Template By RandomId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5226/api/quote/quote-template/random/{{randomId}}?language=en",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"quote",
+										"quote-template",
+										"random",
+										"{{randomId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Quote Template",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\": \"Sample Quote Template\",\r\n    \"FormTemplateId\": 1,\r\n    \"Type\": \"Insurance\",\r\n    \"ReplyJson\": null,\r\n    \"Contact\": null,\r\n    \"Expiration\": null,\r\n    \"isActive\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/quote/quote-template/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"quote",
+										"quote-template",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Quote Template",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Id\": 1,\r\n    \"Name\": \"Updated Quote Template\",\r\n    \"FormTemplateId\": 1,\r\n    \"Type\": \"Insurance\",\r\n    \"ReplyJson\": null,\r\n    \"Contact\": \"contact@example.com\",\r\n    \"Replied\": false,\r\n    \"Expiration\": null,\r\n    \"isActive\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/quote/quote-template/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"quote",
+										"quote-template",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Quote Template",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5226/api/quote/quote-template/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"quote",
+										"quote-template",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Toggle Quote Template Status",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "true",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/quote/quote-template/1/toggle-status",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"quote",
+										"quote-template",
+										"1",
+										"toggle-status"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "FormTemplate",
+					"item": [
+						{
+							"name": "Get All Form Templates",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"PageNumber\": 1,\r\n    \"PageSize\": 10,\r\n    \"Language\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/quote/form-template/getall",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"quote",
+										"form-template",
+										"getall"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Form Template By ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5226/api/quote/form-template/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"quote",
+										"form-template",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Form Template",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\": \"Sample Form Template\",\r\n    \"Design\": \"{}\",\r\n    \"Language\": \"en\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/quote/form-template/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"quote",
+										"form-template",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Form Template",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Id\": 1,\r\n    \"Name\": \"Updated Form Template\",\r\n    \"Design\": \"{}\",\r\n    \"Language\": \"en\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5226/api/quote/form-template/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"quote",
+										"form-template",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Form Template",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5226/api/quote/form-template/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5226",
+									"path": [
+										"api",
+										"quote",
+										"form-template",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzaGFkaSIsImp0aSI6ImI4Nzg4ZjJhLTUzOTMtNDAyMS1iYTgzLWFhYWQ0ZTg1NTZhMSIsImVtYWlsIjoic2hhZHkuYWhtZWRAbW9oaW5zcHJvLmNvbSIsInVpZCI6IjUyYzk0NzI3LTZmMzktNDI5ZS1hNjI1LWVkZmQ1NmQ3MjY2NCIsImZ1bGxuYW1lIjoic2hhZGkgYWhtZWQiLCJyb2xlcyI6InVzZXIiLCJleHAiOjE3NzAxODk0NzgsImlzcyI6IlNlY3VyZU1JQ0FwaSIsImF1ZCI6IlNlY3VyZU1JQ0FwaVVzZXIifQ.Su82dhxpj-qiB0mf1wUNCrvAtR4E8mGyEKB4-Zl9e4I",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Host",
+			"value": ""
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
