@@ -1,8 +1,8 @@
-"use client";
+import { env } from "@/src/lib/env";
 import { useTranslation } from "react-i18next";
 import { useGetAllBoardDirectorsQuery } from "@/src/lib/store/api/mainApi";
-import Link from "next/link";
-import LoadingComponent from "../shared/components/LoadingComponent";
+import Link from "../Shared/Components/Link";
+import LoadingComponent from "../Shared/Components/LoadingComponent";
 
 const BoardDirectorsPage = () => {
   const { t, i18n } = useTranslation();
@@ -72,7 +72,7 @@ const BoardDirectorsPage = () => {
               className="flex flex-col items-center bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition"
             >
               <img
-                src={`${process.env.NEXT_PUBLIC_BASE_IMAGE_URL}${member.iconUrl}`}
+                src={`${env.NEXT_PUBLIC_BASE_IMAGE_URL}${member.iconUrl}`}
                 alt={member.name}
                 className="w-40 h-40 object-fit rounded-lg shadow-md"
               />

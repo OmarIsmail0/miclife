@@ -1,15 +1,14 @@
-'use client';
 import { useSelector } from "react-redux";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const IframeViewComp = () => {
   const { direction } = useSelector((state: any) => state.language);
-  const searchParams = useSearchParams();
+  const [searchParams] = useSearchParams();
   const [url, setUrl] = useState<string | null>(null);
 
   useEffect(() => {
-    const urlParam = searchParams?.get('url');
+    const urlParam = searchParams.get('url');
     if (urlParam) {
       setUrl(urlParam);
     } else {

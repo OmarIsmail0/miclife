@@ -1,11 +1,11 @@
-"use client";
+import { env } from "@/src/lib/env";
 import { useTranslation } from "react-i18next";
-import FAQSection from "../shared/components/FAQSection";
-import DividerComp from "../shared/components/DividerComp";
-import CompanySinceComp from "../shared/components/CompanySinceComp";
+import FAQSection from "../Shared/Components/FAQSection";
+import DividerComp from "../Shared/Components/DividerComp";
+import CompanySinceComp from "../Shared/Components/CompanySinceComp";
 import { useGetSectionsBySlugQuery } from "../lib/store/api/mainApi";
-import FormComp from "../shared/components/FormComp";
-import LoadingComponent from "../shared/components/LoadingComponent";
+import FormComp from "../Shared/Components/FormComp";
+import LoadingComponent from "../Shared/Components/LoadingComponent";
 import { sanitizeHtml } from "../lib/sanitize";
 const CustomerServicePage = () => {
   const { t, i18n } = useTranslation();
@@ -92,7 +92,7 @@ const CustomerServicePage = () => {
             <div className="flex justify-center">
               {
               sectionsData?.blocks[0]?.block?.imageUrl && (
-              (<img src={`${process.env.NEXT_PUBLIC_BASE_IMAGE_URL}${sectionsData?.blocks[0]?.block?.imageUrl}`} alt="senior-management" className="w-1/2" />)
+              (<img src={`${env.NEXT_PUBLIC_BASE_IMAGE_URL}${sectionsData?.blocks[0]?.block?.imageUrl}`} alt="senior-management" className="w-1/2" />)
               )}
             </div>
           </div>

@@ -1,6 +1,7 @@
+import { env } from "@/src/lib/env";
 // Google Analytics and tracking utilities
 
-export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID || '';
+export const GA_TRACKING_ID = env.NEXT_PUBLIC_GA_ID || '';
 
 // Track page views
 export const pageview = (url: string) => {

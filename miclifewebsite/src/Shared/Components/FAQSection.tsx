@@ -1,5 +1,3 @@
-"use client";
-
 import { useGetAllFAQsQuery } from "@/src/lib/store/api/mainApi";
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
 import { ChevronDown } from "lucide-react";

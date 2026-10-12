@@ -1,4 +1,3 @@
-"use client";
 import { useGetAllBranchesQuery } from "@/src/lib/store/api/mainApi";
 import { useTranslation } from "react-i18next";
 import LoadingComponent from "./LoadingComponent";

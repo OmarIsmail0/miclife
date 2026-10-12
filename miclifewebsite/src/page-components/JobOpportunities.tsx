@@ -12,7 +12,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { SendEmail } from "../lib/api/ApiCalls";
-import colorscm from "../shared/constants/colorscm";
+import colorscm from "../Shared/Constants/colorscm";
 
 const { Title, Text } = Typography;
 const { Option } = Select;

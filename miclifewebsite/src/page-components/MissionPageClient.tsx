@@ -1,6 +1,6 @@
-"use client";
+import { env } from "@/src/lib/env";
 import { useTranslation } from "react-i18next";
-import InsurancePlanCard from "../shared/components/InsurancePlanCard";
+import InsurancePlanCard from "../Shared/Components/InsurancePlanCard";
 
 interface MissionPageClientProps {
   sectionsData: any;
@@ -43,7 +43,7 @@ const MissionPageClient = ({ sectionsData }: MissionPageClientProps) => {
             }
             image={
               section?.block?.imageUrl
-                ? `${process.env.NEXT_PUBLIC_BASE_IMAGE_URL}${section?.block?.imageUrl}`
+                ? `${env.NEXT_PUBLIC_BASE_IMAGE_URL}${section?.block?.imageUrl}`
                 : undefined
             }
             isReversed={index % 2 !== 0}

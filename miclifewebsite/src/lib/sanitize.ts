@@ -1,28 +1,13 @@
+import DOMPurify from "dompurify";
 // Minimal config shape we use; avoids needing dompurify types
 type Config = {
   ALLOWED_TAGS?: string[];
   ALLOWED_ATTR?: string[];
 };
 
-// Create a safe sanitizer for both server and client.
-// On the server, it becomes a no-op to avoid window-related errors.
-let purifier: { sanitize: (input: string, config?: Config) => string };
-
-if (typeof window !== "undefined") {
-	try {
-		// eslint-disable-next-line @typescript-eslint/no-var-requires
-		const createDOMPurify = require("dompurify");
-		purifier = createDOMPurify(window as unknown as Window);
-	} catch {
-		purifier = {
-			sanitize: (input: string) => input ?? "",
-		};
-	}
-} else {
-	purifier = {
-		sanitize: (input: string) => input ?? "",
-	};
-}
+const purifier: { sanitize: (input: string, config?: Config) => string } = {
+	sanitize: (input: string, config?: Config) => String(DOMPurify.sanitize(input, config)),
+};
 
 interface SanitizeOptions {
   allowedTags?: string[];

@@ -1,7 +1,7 @@
 import InputComp from "./InputComp";
 import ButtonComp from "./ButtonComp";
 import { Select, Form, DatePicker } from "antd";
-import colorscm from "../constants/colorscm";
+import colorscm from "../Constants/colorscm";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { useCreateTicketQuery } from "../../lib/store/api/mainApi";

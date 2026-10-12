@@ -1,4 +1,4 @@
-"use client";
+import { env } from "@/src/lib/env";
 import { useState } from "react";
 import {
   FaNewspaper,
@@ -11,10 +11,10 @@ import {
   FaChevronRight,
 } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
-import colorscm from "../shared/constants/colorscm";
-import "../shared/styles/FooterCmp.css";
+import colorscm from "../Shared/Constants/colorscm";
+import "../Shared/Styles/FooterCmp.css";
 import { useGetAllMediaAlbumQuery } from "../lib/store/api/mainApi";
-import LoadingComponent from "../shared/components/LoadingComponent";
+import LoadingComponent from "../Shared/Components/LoadingComponent";
 import { sanitizeHtml } from "../lib/sanitize";
 
 const mediaTabs = [
@@ -39,7 +39,7 @@ const MediaCenter = () => {
     if (item.images.length > 0) {
       item.images.forEach((image: any) => {
         mediaImages.push({
-          src: `${process.env.NEXT_PUBLIC_BASE_IMAGE_URL}${image.filePath}`,
+          src: `${env.NEXT_PUBLIC_BASE_IMAGE_URL}${image.filePath}`,
           alt: image.fileName,
         });
       });
@@ -51,7 +51,7 @@ const MediaCenter = () => {
     if (item.images.length > 0) {
       item.images.forEach((video: any) => {
         mediaVideos.push({
-          src: `${process.env.NEXT_PUBLIC_BASE_IMAGE_URL}${video.filePath}`,
+          src: `${env.NEXT_PUBLIC_BASE_IMAGE_URL}${video.filePath}`,
           alt: video.fileName,
         });
       });
@@ -63,7 +63,7 @@ const MediaCenter = () => {
     if (item.images.length > 0) {
       item.images.forEach((image: any) => {
         mediaAwards.push({
-          src: `${process.env.NEXT_PUBLIC_BASE_IMAGE_URL}${image.filePath}`,
+          src: `${env.NEXT_PUBLIC_BASE_IMAGE_URL}${image.filePath}`,
           alt: image.fileName,
         });
       });
@@ -136,7 +136,7 @@ const MediaCenter = () => {
               {mediaAlbum?.filter((item: any) => item.type === activeTab).map((news: any, index: number) => (
                 <div key={index} className="bg-white p-4 shadow-md rounded-lg hover:shadow-lg transition">
                   <div className="w-full h-40 bg-gray-200 rounded-md overflow-hidden">
-                    <img src={`${process.env.NEXT_PUBLIC_BASE_IMAGE_URL}${news?.images[0]?.filePath}`} alt={news?.translations[i18n.language === 'ar' ? 1 : 0]?.name} className="w-full h-full object-cover" />
+                    <img src={`${env.NEXT_PUBLIC_BASE_IMAGE_URL}${news?.images[0]?.filePath}`} alt={news?.translations[i18n.language === 'ar' ? 1 : 0]?.name} className="w-full h-full object-cover" />
                   </div>
                   <h3 className="text-lg font-semibold mt-3 text-gray-800">{news?.translations[i18n.language === 'ar' ? 1 : 0]?.name}</h3>
                   <p className="text-gray-600" dangerouslySetInnerHTML={{ __html: sanitizeHtml(news?.translations[i18n.language === 'ar' ? 1 : 0]?.description) }}></p>

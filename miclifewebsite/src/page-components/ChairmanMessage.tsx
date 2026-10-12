@@ -1,7 +1,7 @@
-"use client";
+import { env } from "@/src/lib/env";
 import { useGetSectionsBySlugQuery } from "../lib/store/api/mainApi";
 import { useTranslation } from "react-i18next";
-import LoadingComponent from "../shared/components/LoadingComponent";
+import LoadingComponent from "../Shared/Components/LoadingComponent";
 import { sanitizeHtml } from "../lib/sanitize";
 const ChairmanMessage = () => {
   const { data: sectionsData, isLoading, isError } = useGetSectionsBySlugQuery("CHAIRMAN-MESSAGE");
@@ -43,7 +43,7 @@ const ChairmanMessage = () => {
       <div className="prose max-w-none leading-relaxed text-justify whitespace-normal break-words">
         {/* 🖼️ Image floats inside text area */}
         <img
-          src={message.imageUrl ? `${process.env.NEXT_PUBLIC_BASE_IMAGE_URL}${message.imageUrl}` : ''}
+          src={message.imageUrl ? `${env.NEXT_PUBLIC_BASE_IMAGE_URL}${message.imageUrl}` : ''}
           alt={"Chairman"}
           className={`${
             i18n.language === "ar" ? "float-left mr-6" : "float-right ml-6"

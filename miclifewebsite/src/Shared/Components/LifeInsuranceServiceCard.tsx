@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import Link from "next/link";
+import Link from "./Link";
 
 
 const LifeInsuranceServiceCard: React.FC<any> = ({

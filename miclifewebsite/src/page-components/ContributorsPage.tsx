@@ -1,10 +1,10 @@
-"use client";
-import ContributorsComp from "../shared/components/ContributorsComp";
-import DividerComp from "../shared/components/DividerComp";
-import InsurancePlanCard from "../shared/components/InsurancePlanCard";
+import { env } from "@/src/lib/env";
+import ContributorsComp from "../Shared/Components/ContributorsComp";
+import DividerComp from "../Shared/Components/DividerComp";
+import InsurancePlanCard from "../Shared/Components/InsurancePlanCard";
 
 import { useContext } from "react";
-import { ContributorContext } from "../shared/context/ContributorContext";
+import { ContributorContext } from "../Shared/context/ContributorContext";
 import { useTranslation } from "react-i18next";
 const ContributorsPage = () => {
   const contributorsData = useContext(ContributorContext);
@@ -21,7 +21,7 @@ const ContributorsPage = () => {
             key={index}
             title={contributor.title}
             description={contributor.descrption}
-            image={contributor.imageUrl ? `${process.env.NEXT_PUBLIC_BASE_IMAGE_URL}${contributor.imageUrl}` : undefined}
+            image={contributor.imageUrl ? `${env.NEXT_PUBLIC_BASE_IMAGE_URL}${contributor.imageUrl}` : undefined}
             isReversed={index % 2 !== 0}
             isLast={index == contributor?.length - 1}
           />

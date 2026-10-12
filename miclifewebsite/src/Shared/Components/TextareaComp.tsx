@@ -1,5 +1,3 @@
-'use client';
-
 interface TextareaCompProps {
   primaryColor?: string;
   secondaryColor?: string;

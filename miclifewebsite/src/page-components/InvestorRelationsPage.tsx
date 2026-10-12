@@ -1,7 +1,5 @@
-"use client";
-
-import ContributorsComp from "../shared/components/ContributorsComp";
-import QuickLinks from "../shared/components/QuickLinks";
+import ContributorsComp from "../Shared/Components/ContributorsComp";
+import QuickLinks from "../Shared/Components/QuickLinks";
 import { useTranslation } from "react-i18next";
 
 

@@ -27,6 +27,18 @@
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
 
+# Single-page app fallback: serve index.html for client-side routes
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  # The control panel is hosted separately under /cp.
+  RewriteRule ^cp(?:/|$) - [L]
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+
 # Custom Error Pages
 ErrorDocument 404 /404
 ErrorDocument 500 /500

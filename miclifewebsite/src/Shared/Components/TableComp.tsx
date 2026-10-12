@@ -1,9 +1,7 @@
-'use client';
-
 import React from "react";
 import { useLanguage } from "../../lib/contexts/LanguageContext";
 import { useTranslation } from "react-i18next";
-import colorscm from "../constants/colorscm";
+import colorscm from "../Constants/colorscm";
 
 interface QuarterData {
   quarter: string;

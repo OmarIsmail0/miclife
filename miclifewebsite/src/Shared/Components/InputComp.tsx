@@ -1,5 +1,3 @@
-'use client';
-
 interface InputCompProps {
   bgColor?: string;
   borderColor?: string;

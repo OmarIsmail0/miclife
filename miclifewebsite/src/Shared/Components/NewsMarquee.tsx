@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import colorscm from "../constants/colorscm";
+import colorscm from "../Constants/colorscm";
 
 interface NewsItem {
   ar: string;

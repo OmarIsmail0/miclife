@@ -1,10 +1,10 @@
-"use client";
+import { env } from "@/src/lib/env";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import ProductDescription from "../shared/components/InsuranceDescription";
-import DividerComp from "../shared/components/DividerComp";
+import ProductDescription from "../Shared/Components/InsuranceDescription";
+import DividerComp from "../Shared/Components/DividerComp";
 import { useGetSectionsBySlugQuery } from "../lib/store/api/mainApi";
-import LoadingComponent from "../shared/components/LoadingComponent";
+import LoadingComponent from "../Shared/Components/LoadingComponent";
 import { sanitizeHtml } from "../lib/sanitize";
 
 const SocialResponsibilityPage = () => {
@@ -50,7 +50,7 @@ const {
             key={index}
             title={block.block.translations?.[language === "ar" ? 1 : 0]?.title as string}
             description={block.block.translations?.[language === "ar" ? 1 : 0]?.description as string}
-            image={`${process.env.NEXT_PUBLIC_BASE_IMAGE_URL}${block.block.imageUrl}`}
+            image={`${env.NEXT_PUBLIC_BASE_IMAGE_URL}${block.block.imageUrl}`}
           />
         ))
       )}

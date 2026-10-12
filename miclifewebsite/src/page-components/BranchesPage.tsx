@@ -1,4 +1,4 @@
-import BranchesComp from "../shared/components/BranchesComp";
+import BranchesComp from "../Shared/Components/BranchesComp";
 import { useEffect } from "react";
 
 const BranchesPage = () => {

@@ -10,7 +10,7 @@ class Logger {
   private options: Required<LoggerOptions>;
 
   constructor(options: LoggerOptions = {}) {
-    this.isDevelopment = process.env.NODE_ENV === 'development';
+    this.isDevelopment = import.meta.env.DEV;
     this.options = {
       enableInProduction: options.enableInProduction ?? false,
       minLevel: options.minLevel ?? 'info',

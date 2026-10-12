@@ -1,19 +1,18 @@
-"use client";
-
+import { env } from "@/src/lib/env";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import DividerComp from "../shared/components/DividerComp";
-import FAQSection from "../shared/components/FAQSection";
-import ContactSection from "../shared/components/ContactSection";
-import ButtonComp from "../shared/components/ButtonComp";
-import colorscm from "../shared/constants/colorscm";
-import { useRouter } from "next/navigation";
+import DividerComp from "../Shared/Components/DividerComp";
+import FAQSection from "../Shared/Components/FAQSection";
+import ContactSection from "../Shared/Components/ContactSection";
+import ButtonComp from "../Shared/Components/ButtonComp";
+import colorscm from "../Shared/Constants/colorscm";
+import { useNavigate } from "react-router-dom";
 import { useGetSectionsBySlugQuery } from "../lib/store/api/mainApi";
-import LoadingComponent from "../shared/components/LoadingComponent";
+import LoadingComponent from "../Shared/Components/LoadingComponent";
 import { sanitizeHtml } from "../lib/sanitize";
-import HelpCenter from "../shared/components/HelpCenter";
-import CompanySinceComp from "../shared/components/CompanySinceComp";
+import HelpCenter from "../Shared/Components/HelpCenter";
+import CompanySinceComp from "../Shared/Components/CompanySinceComp";
 
 interface RegistrationCTAProps {
   onRegisterModalOpen: () => void;
@@ -61,7 +60,7 @@ const ContactUsPage: React.FC = () => {
   const { t,i18n } = useTranslation();
   // Ensure hooks are not conditionally skipped between renders
   const [isRegisterModalVisible, setRegisterModalVisible] = useState(false);
-  const router = useRouter();
+  const navigate = useNavigate();
   const {
     data: sectionsData,
     isLoading,
@@ -105,7 +104,7 @@ const ContactUsPage: React.FC = () => {
             {/* <p className="text-gray-700 text-sm md:text-md">{sectionsData[0]?.block?.translations?.[direction === "rtl" ? 1 : 0]?.description as string}</p> */}
           </div>
            {sectionsData?.blocks[0]?.block?.imageUrl && (
-             <img src={ `${process.env.NEXT_PUBLIC_BASE_IMAGE_URL}${sectionsData?.blocks[0]?.block?.imageUrl}`} alt={sectionsData?.blocks[0]?.block?.translations?.[i18n.language === "ar" ? 1 : 0]?.title || "Customer Service - Al Mohandes Insurance"} className="w-70 sm:w-90 md:max-w-md mx-auto h-auto" />
+             <img src={ `${env.NEXT_PUBLIC_BASE_IMAGE_URL}${sectionsData?.blocks[0]?.block?.imageUrl}`} alt={sectionsData?.blocks[0]?.block?.translations?.[i18n.language === "ar" ? 1 : 0]?.title || "Customer Service - Al Mohandes Insurance"} className="w-70 sm:w-90 md:max-w-md mx-auto h-auto" />
            )}
           
         </div>
@@ -176,7 +175,7 @@ const ContactUsPage: React.FC = () => {
         <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4 md:mb-6 underline">{t("helpCenter.additionalHelpTitle")}</h2>
         <p className="text-base md:text-lg text-gray-700 mb-6 md:mb-8 mx-auto">{t("helpCenter.additionalHelpText")}</p>
         <div className="flex justify-center md:justify-end">
-          <button onClick={() => router.push("/contact-us")} className="bg-green-800 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-semibold text-base md:text-lg flex items-center">
+          <button onClick={() => navigate("/contact-us")} className="bg-green-800 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-semibold text-base md:text-lg flex items-center">
             <span>{i18n.language === "ar" ? "تواصل معنا" : "Contact Us"}</span>
           </button>
         </div>

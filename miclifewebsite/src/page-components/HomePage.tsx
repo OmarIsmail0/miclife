@@ -1,32 +1,31 @@
-"use client";
-
+import { env } from "@/src/lib/env";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { useState, useEffect, useContext } from "react";
-import Link from "next/link";
+import Link from "../Shared/Components/Link";
 
 // Components
-import AboutUsComp from "../shared/components/AboutUsComp";
-import FAQSection from "../shared/components/FAQSection";
-import DividerComp from "../shared/components/DividerComp";
-import ButtonComp from "../shared/components/ButtonComp";
-import ProductDescription from "../shared/components/InsuranceDescription";
-import QuoteModal from "../shared/components/QuoteModal";
-import AccidentModal from "../shared/components/AccidentModal";
-import RegisterModal from "../shared/components/RegisterModal";
+import AboutUsComp from "../Shared/Components/AboutUsComp";
+import FAQSection from "../Shared/Components/FAQSection";
+import DividerComp from "../Shared/Components/DividerComp";
+import ButtonComp from "../Shared/Components/ButtonComp";
+import ProductDescription from "../Shared/Components/InsuranceDescription";
+import QuoteModal from "../Shared/Components/QuoteModal";
+import AccidentModal from "../Shared/Components/AccidentModal";
+import RegisterModal from "../Shared/Components/RegisterModal";
 
 // New extracted components
-import HeroSection from "../shared/components/HeroSection";
-import NewsMarquee from "../shared/components/NewsMarquee";
-import ServicesSection from "../shared/components/ServicesSection";
-import ContactSection from "../shared/components/ContactSection";
-import InstallmentInquirySection from "../shared/components/InstallmentInquirySection";
+import HeroSection from "../Shared/Components/HeroSection";
+import NewsMarquee from "../Shared/Components/NewsMarquee";
+import ServicesSection from "../Shared/Components/ServicesSection";
+import ContactSection from "../Shared/Components/ContactSection";
+import InstallmentInquirySection from "../Shared/Components/InstallmentInquirySection";
 
 // Constants
-import colorscm from "../shared/constants/colorscm";
-import LoadingComponent from "../shared/components/LoadingComponent";
+import colorscm from "../Shared/Constants/colorscm";
+import LoadingComponent from "../Shared/Components/LoadingComponent";
 import { useGetSectionsBySlugQuery } from "../lib/store/api/mainApi";
-import { LineOfBusinessContext } from "../shared/context/LineOfBusinessContext";
+import { LineOfBusinessContext } from "../Shared/context/LineOfBusinessContext";
 
 // Social Responsibility data
 
@@ -93,7 +92,7 @@ const SocialResponsibilitySection: React.FC<{ sectionsData: any }> = ({ sections
             key={index}
             title={block.block.translations?.[i18n.language === "ar" ? 1 : 0]?.title as string}
             description={block.block.translations?.[i18n.language === "ar" ? 1 : 0]?.description as string}
-            image={`${process.env.NEXT_PUBLIC_BASE_IMAGE_URL}${block.block.imageUrl}`}
+            image={`${env.NEXT_PUBLIC_BASE_IMAGE_URL}${block.block.imageUrl}`}
           />
         ))
       )}

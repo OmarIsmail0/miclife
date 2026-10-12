@@ -1,4 +1,5 @@
 import { logger } from "./logger";
+import { env } from "./env";
 
 type JsonRecord = Record<string, unknown>;
 
@@ -10,7 +11,7 @@ export class ServerApiClient {
   }
 
   static fromEnv(): ServerApiClient {
-    const base = process.env.BASE_URL || process.env.MOHINS_URL || "";
+    const base = env.NEXT_PUBLIC_BASE_URL;
     return new ServerApiClient(base);
   }
 
@@ -30,7 +31,6 @@ export class ServerApiClient {
           ...(init?.headers ?? {}),
         },
         body: JSON.stringify(body),
-        next: { revalidate: 0 },
         ...init,
       });
     } catch (err) {

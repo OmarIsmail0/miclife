@@ -1,10 +1,9 @@
-'use client';
-import "../styles/FooterCmp.css";
-import colorscm from "../constants/colorscm";
+import "../Styles/FooterCmp.css";
+import colorscm from "../Constants/colorscm";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import Link from "./Link";
+import { useNavigate } from "react-router-dom";
 
 interface Service {
   title: string;
@@ -55,10 +54,10 @@ const social: SocialItem[] = [
 const FooterCmp = () => {
   const { t } = useTranslation();
   const { direction, language } = useSelector((state: any) => state.language) || { direction: "rtl", language: "ar" };
-  const router = useRouter();
+  const navigate = useNavigate();
   
   const handleClick = (url: string) => {
-    router.push(`/viewer?url=${encodeURIComponent(url)}`);
+    navigate(`/viewer?url=${encodeURIComponent(url)}`);
   };
 
   const aboutus: AboutItem[] = [

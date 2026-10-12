@@ -1,13 +1,13 @@
 
 
 import { useTranslation } from "react-i18next";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { useGetAllInvestorsQuery } from "@/src/lib/store/api/mainApi";
 import LoadingComponent from "./LoadingComponent";
 
 const QuickLinks = () => {
   const { t, i18n } = useTranslation();
-  const router = useRouter();
+  const navigate = useNavigate();
   const { data: investors, isLoading, isError } = useGetAllInvestorsQuery({});
   // const links = [
   //   {
@@ -73,7 +73,7 @@ const QuickLinks = () => {
   // ];
 
   const handleClick = (url: string) => {
-    router.push(`/viewer?url=${encodeURIComponent(url)}`);
+    navigate(`/viewer?url=${encodeURIComponent(url)}`);
   };
 
   if (isLoading) 

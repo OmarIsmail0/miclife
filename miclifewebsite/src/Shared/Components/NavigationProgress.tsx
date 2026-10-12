@@ -1,11 +1,8 @@
-"use client";
-
 import { useEffect, useState, useTransition } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { useLocation } from "react-router-dom";
 
 export default function NavigationProgress() {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
+  const { pathname, search } = useLocation();
   const [isNavigating, setIsNavigating] = useState(false);
   const [progress, setProgress] = useState(0);
 
@@ -19,7 +16,7 @@ export default function NavigationProgress() {
     }, 200);
 
     return () => clearTimeout(timeout);
-  }, [pathname, searchParams]);
+  }, [pathname, search]);
 
   useEffect(() => {
     let progressInterval: NodeJS.Timeout;

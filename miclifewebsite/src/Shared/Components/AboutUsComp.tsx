@@ -1,5 +1,6 @@
+import { env } from "@/src/lib/env";
 
-import InsurancePlanCard from "../components/InsurancePlanCard";
+import InsurancePlanCard from "./InsurancePlanCard";
 import { useTranslation } from "react-i18next";
 
 const AboutUsComp = ( { data }: { data: any }) => {
@@ -12,7 +13,7 @@ const AboutUsComp = ( { data }: { data: any }) => {
       <InsurancePlanCard
         title={data[0]?.block?.translations?.[i18n.language === "ar" ? 1 : 0]?.title as string}
         description={data[0]?.block?.translations?.[i18n.language === "ar" ? 1 : 0]?.description as string}
-        image={data[0]?.block?.imageUrl ? `${process.env.NEXT_PUBLIC_BASE_IMAGE_URL}${data[0]?.block?.imageUrl}` : undefined}
+        image={data[0]?.block?.imageUrl ? `${env.NEXT_PUBLIC_BASE_IMAGE_URL}${data[0]?.block?.imageUrl}` : undefined}
         isReversed={false}
         isLast={true}
       />

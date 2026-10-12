@@ -1,8 +1,6 @@
-"use client";
-
 import { useTranslation } from "react-i18next";
-import Link from "next/link";
-import colorscm from "../constants/colorscm";
+import Link from "./Link";
+import colorscm from "../Constants/colorscm";
 
 interface Service {
   title: string;

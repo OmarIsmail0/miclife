@@ -1,5 +1,4 @@
-"use client";
-
+import { env } from "@/src/lib/env";
 import { useMemo } from "react";
 import { useGetBoardDirectorByIdQuery } from "@/src/lib/store/api/mainApi";
 import { useTranslation } from "react-i18next";
@@ -76,7 +75,7 @@ const BoardDirectorDetailsContent = ({ id }: BoardDirectorDetailsContentProps) =
       <div className="prose max-w-none leading-relaxed text-justify whitespace-normal break-words">
         {/* 🖼️ Image floats inside text area */}
         <img
-          src={boardDirector.imageUrl ? `${process.env.NEXT_PUBLIC_BASE_IMAGE_URL}${boardDirector.imageUrl}` : fallbackImage}
+          src={boardDirector.imageUrl ? `${env.NEXT_PUBLIC_BASE_IMAGE_URL}${boardDirector.imageUrl}` : fallbackImage}
           alt={localized.name ?? boardDirector.name ?? "Board Member"}
           className={`${
             i18n.language === "ar" ? "float-left mr-6" : "float-right ml-6"

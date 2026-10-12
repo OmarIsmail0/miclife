@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import i18n from "../constants/i18n";
+import i18n from "../Constants/i18n";
 const namespace = "LANGUAGE";
 const initialState = {
   language: typeof window !== "undefined" && localStorage.getItem("language") ? localStorage.getItem("language") : "ar",

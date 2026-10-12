@@ -1,5 +1,3 @@
-"use client";
-
 import { useRef, useMemo, useEffect } from 'react';
 import { Provider } from 'react-redux';
 import { makeStore, AppStore } from '../store/store';

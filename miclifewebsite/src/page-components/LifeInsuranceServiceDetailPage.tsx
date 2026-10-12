@@ -1,13 +1,11 @@
-import { useRouter, useSearchParams } from "next/navigation";
+import { env } from "@/src/lib/env";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
-import InstallmentInquirySection from "../shared/components/InstallmentInquirySection";
+import InstallmentInquirySection from "../Shared/Components/InstallmentInquirySection";
 
 const LifeInsuranceServiceDetailPage: React.FC<any> = ({ product }) => {
   const { t, i18n } = useTranslation();
-  const router = useRouter();
-  const searchParams = useSearchParams();
   const [serviceData, setServiceData] = useState<any>(null);
 
   // Get service data from state
@@ -43,7 +41,7 @@ const LifeInsuranceServiceDetailPage: React.FC<any> = ({ product }) => {
 
           {/* Image */}
           {product?.imageUrl && <div className="flex-1 flex justify-center">
-            <img src={`${process.env.NEXT_PUBLIC_API_URL}${product?.imageUrl}`} alt={title} className="w-full max-w-md h-auto" />
+            <img src={`${env.NEXT_PUBLIC_API_URL}${product?.imageUrl}`} alt={title} className="w-full max-w-md h-auto" />
           </div>}
         </div>
       </section>

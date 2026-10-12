@@ -1,5 +1,3 @@
-
-"use client";
 import DividerComp from "./DividerComp";
 import { sanitizeHtml } from "../../lib/sanitize";
 

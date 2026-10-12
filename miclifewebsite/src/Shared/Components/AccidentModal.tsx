@@ -1,5 +1,3 @@
- 
-"use client";
 import { Modal, Form, Input, Upload, Button, message } from "antd";
 import { useEffect, useState } from "react";
 import TextArea from "antd/es/input/TextArea";

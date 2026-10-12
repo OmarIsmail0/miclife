@@ -1,6 +1,5 @@
-"use client";
 import { useTranslation } from "react-i18next";
-import colorscm from "../constants/colorscm";
+import colorscm from "../Constants/colorscm";
 import { useState, useEffect } from "react";
 
 

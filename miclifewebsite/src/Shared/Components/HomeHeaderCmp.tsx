@@ -1,7 +1,6 @@
-"use client";
 import { useContext, useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Link from "./Link";
+import { useLocation } from "react-router-dom";
 import { Dialog, DialogPanel, Popover, PopoverButton, PopoverGroup, PopoverPanel } from "@headlessui/react";
 import {
   UsersIcon,
@@ -17,12 +16,12 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 // import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { LangAr, LangEng } from "../../lib/features/languageSlice";
-import { language } from "../constants/language";
-import colorscm from "../constants/colorscm";
+import { language } from "../Constants/language";
+import colorscm from "../Constants/colorscm";
 import { useTranslation } from "react-i18next";
 
 import "../Styles/HeaderCmp.css";
-import { LineOfBusinessContext } from "@/src/shared/context/LineOfBusinessContext";
+import { LineOfBusinessContext } from "@/src/Shared/context/LineOfBusinessContext";
 
 const menuItems = [
   {
@@ -166,7 +165,7 @@ export default function HomeHeaderCmp() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { language: lang, direction } = useSelector((state: any) => state.language) || { language: "ar", direction: "rtl" };
   const dispatch = useDispatch();
-  const pathname = usePathname();
+  const { pathname } = useLocation();
   const lineOfBusinessList = useContext(LineOfBusinessContext);
 menuItems.find(item => item.name === "Products")!.dropdownMenu = lineOfBusinessList?.map((item: any) => ({
   name: lang === "ar" ? item.translations[1].name : item.translations[0].name,

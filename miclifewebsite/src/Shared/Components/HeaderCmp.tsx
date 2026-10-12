@@ -1,8 +1,6 @@
-'use client';
-
 import { useState } from "react";
-import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import Link from "./Link";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Dialog, DialogPanel, Popover, PopoverButton, PopoverGroup, PopoverPanel } from "@headlessui/react";
 import {
   UsersIcon,
@@ -20,9 +18,9 @@ import {
 import { TfiAnnouncement } from "react-icons/tfi";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { useDispatch, useSelector } from "react-redux";
-import { LangAr, LangEng } from "../language/LanSlice";
-import { language } from "../constants/language";
-import colorscm from "../constants/colorscm";
+import { LangAr, LangEng } from "../Language/LanSlice";
+import { language } from "../Constants/language";
+import colorscm from "../Constants/colorscm";
 import { useTranslation } from "react-i18next";
 
 const menuItems = [
@@ -103,8 +101,8 @@ export default function HeaderCmp() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { langauge } = useSelector((state: any) => state.language);
   const dispatch = useDispatch();
-  const router = useRouter();
-  const location = usePathname();
+  const navigate = useNavigate();
+  const { pathname: location } = useLocation();
 
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState<any[]>([]);
@@ -146,7 +144,7 @@ export default function HeaderCmp() {
   };
 
   const handleResultClick = (path: string) => {
-    router.push(path);
+    navigate(path);
     setSearchQuery("");
   };
 
