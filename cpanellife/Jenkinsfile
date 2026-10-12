@@ -1,0 +1,214 @@
+pipeline {
+    agent any
+
+    options {
+        skipDefaultCheckout(true)
+        disableConcurrentBuilds()
+        timeout(time: 30, unit: 'MINUTES')
+        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '5'))
+        timestamps()
+    }
+
+    environment {
+        DOCKER_REGISTRY = '10.30.18.30:3033'
+        DOCKER_IMAGE = '10.30.18.30:3033/mic/cpanel'
+        NAMESPACE = 'mic-dev'
+        DEPLOYMENT = 'cpanel'
+        CONTAINER = 'cpanel'
+        VITE_API_URL = 'https://api.dev.mic.internal/api'
+        VITE_CONFIG_URL = 'https://api.dev.mic.internal'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                cleanWs()
+                script {
+                    def checkoutDetails = checkout scm
+                    env.CHECKED_OUT_BRANCH = checkoutDetails.GIT_BRANCH ?: env.BRANCH_NAME ?: ''
+                }
+            }
+        }
+
+        stage('Set Image Tag') {
+            steps {
+                script {
+                    env.GIT_SHORT_COMMIT = sh(
+                        script: 'git rev-parse --short=7 HEAD',
+                        returnStdout: true
+                    ).trim()
+                    env.IMAGE_TAG = "build-${env.BUILD_NUMBER}-${env.GIT_SHORT_COMMIT}"
+
+                    def branchRef = (env.BRANCH_NAME ?: env.CHECKED_OUT_BRANCH ?: sh(
+                        script: 'git branch --show-current',
+                        returnStdout: true
+                    ).trim()).trim()
+                    def deployableRefs = [
+                        'main',
+                        'master',
+                        'origin/main',
+                        'origin/master',
+                        'refs/heads/main',
+                        'refs/heads/master',
+                    ]
+                    env.DEPLOY_ALLOWED = (branchRef in deployableRefs).toString()
+
+                    currentBuild.displayName = "#${env.BUILD_NUMBER} ${env.GIT_SHORT_COMMIT}"
+                    echo "Image tag: ${env.IMAGE_TAG}"
+                    echo "Deployment branch ref: ${branchRef}; deploy allowed: ${env.DEPLOY_ALLOWED}"
+                }
+            }
+        }
+
+        stage('Check Node/npm') {
+            steps {
+                sh '''
+                    set -eu
+                    node --version
+                    npm --version
+                    test -f package.json
+                    test -f package-lock.json
+                '''
+            }
+        }
+
+        stage('npm ci') {
+            steps {
+                sh 'npm ci'
+            }
+        }
+
+        stage('Build Frontend') {
+            steps {
+                sh '''
+                    set -eu
+                    rm -rf dist
+                    test -n "$VITE_API_URL"
+                    test -n "$VITE_CONFIG_URL"
+                    VITE_API_URL="$VITE_API_URL" \
+                    VITE_CONFIG_URL="$VITE_CONFIG_URL" \
+                    npm run build
+                '''
+            }
+        }
+
+        stage('Validate Build Output') {
+            steps {
+                sh '''
+                    set -eu
+                    test -d dist
+                    test -f dist/index.html
+                    grep -Fq '/cp/assets/' dist/index.html
+                    grep -rFq -- "$VITE_API_URL" dist
+                    grep -rFq -- "$VITE_CONFIG_URL" dist
+                    api_url_hits="$(grep -rFo -- "$VITE_API_URL" dist | wc -l | tr -d '[:space:]')"
+                    config_url_hits="$(grep -rFo -- "$VITE_CONFIG_URL" dist | wc -l | tr -d '[:space:]')"
+                    if [ "$api_url_hits" -lt 1 ]; then
+                        echo "ERROR: expected API URL not found: $VITE_API_URL" >&2
+                        exit 1
+                    fi
+                    if [ "$config_url_hits" -lt 1 ]; then
+                        echo "ERROR: expected config URL not found: $VITE_CONFIG_URL" >&2
+                        exit 1
+                    fi
+                    if [ "$config_url_hits" -le "$api_url_hits" ]; then
+                        echo "ERROR: config URL is not independently embedded (found $config_url_hits vs API URL $api_url_hits)" >&2
+                        exit 1
+                    fi
+                    if grep -rEl 'localhost:[0-9]+|127\\.0\\.0\\.1:[0-9]+' dist; then
+                        echo 'ERROR: frontend bundle contains a development URL' >&2
+                        exit 1
+                    fi
+                '''
+            }
+        }
+
+        stage('Docker Login') {
+            when {
+                expression { env.DEPLOY_ALLOWED == 'true' }
+            }
+            steps {
+                withCredentials([usernamePassword(
+                    credentialsId: 'Gitea_Jenkins_Hub',
+                    usernameVariable: 'DOCKER_USER',
+                    passwordVariable: 'DOCKER_PASS'
+                )]) {
+                    sh '''
+                        set +x
+                        printf '%s' "$DOCKER_PASS" | docker login "$DOCKER_REGISTRY" \
+                            -u "$DOCKER_USER" --password-stdin
+                    '''
+                }
+            }
+        }
+
+        stage('Docker Build') {
+            when {
+                expression { env.DEPLOY_ALLOWED == 'true' }
+            }
+            steps {
+                sh '''
+                    set -eu
+                    docker build \
+                        --tag "$DOCKER_IMAGE:$IMAGE_TAG" \
+                        --tag "$DOCKER_IMAGE:latest" \
+                        .
+                '''
+            }
+        }
+
+        stage('Docker Push') {
+            when {
+                expression { env.DEPLOY_ALLOWED == 'true' }
+            }
+            steps {
+                sh '''
+                    set -eu
+                    docker push "$DOCKER_IMAGE:$IMAGE_TAG"
+                    docker push "$DOCKER_IMAGE:latest"
+                '''
+            }
+        }
+
+        stage('Deploy to Kubernetes') {
+            when {
+                expression { env.DEPLOY_ALLOWED == 'true' }
+            }
+            steps {
+                sh '''
+                    set -eu
+                    kubectl apply -n "$NAMESPACE" -f k8s/deployment.yaml
+                    kubectl apply -n "$NAMESPACE" -f k8s/service.yaml
+                    kubectl apply -n "$NAMESPACE" -f k8s/ingress.yaml
+                    
+                    kubectl set image \
+                        -n "$NAMESPACE" \
+                        "deployment/$DEPLOYMENT" \
+                        "$CONTAINER=$DOCKER_IMAGE:$IMAGE_TAG"
+                '''
+            }
+        }
+
+        stage('Wait for Rollout') {
+            when {
+                expression { env.DEPLOY_ALLOWED == 'true' }
+            }
+            steps {
+                sh '''
+                    set -eu
+                    kubectl rollout status \
+                        -n "$NAMESPACE" \
+                        "deployment/$DEPLOYMENT" \
+                        --timeout=120s
+                '''
+            }
+        }
+    }
+
+    post {
+        always {
+            sh 'docker logout "$DOCKER_REGISTRY" >/dev/null 2>&1 || true'
+            cleanWs(deleteDirs: true, disableDeferredWipeout: true)
+        }
+    }
+}

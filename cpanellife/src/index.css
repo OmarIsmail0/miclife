@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "tnum" on, "lnum" on; /* Better number display */
+}
+
+/* Improve number and data readability */
+.ant-table-tbody > tr > td,
+.ant-statistic-content-value,
+.ant-input,
+.ant-input-number-input {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" on, "lnum" on;
+}
+
+.m {
+  background-color: rgb(75, 152, 214) !important;
+}
+
+.friday {
+  background-color: #55efc4;
+}
+
+.weekend {
+  background-color: #b9c7e5;
+}
+
+.Logo {
+  height: 50px;
+  background-color: rgb(75, 152, 214) !important;
+}
+
+.App {
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #e8ecf1;
+}
+
+.formAuth {
+  width: 400px;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 4px 14px 3px rgb(205 227 252);
+  -moz-box-shadow: 3px 4px 14px 3px rgb(205 227 252);
+  box-shadow: 3px 4px 14px 3px rgb(205 227 252);
+}
+
+.ant-modal-body {
+  padding: 6px;
+  font-size: 14px;
+  line-height: 1.5715;
+  word-wrap: break-word;
+}
+
+.fomrIssuee {
+  width: 400px;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+
+.ant-menu.ant-menu-dark,
+.ant-menu-dark .ant-menu-sub,
+.ant-menu.ant-menu-dark .ant-menu-sub {
+  color: rgba(255, 255, 255, 0.65);
+  background: #2b6399;
+}
+
+#hideMe {
+  -moz-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Opera */
+  animation: cssAnimation 0s ease-in 5s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+@-webkit-keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+}
+
+.toolbar-wrapper {
+  padding: 0px 24px;
+  color: #fff;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 100px;
+}
+
+.toolbar-wrapper .anticon {
+  padding: 12px;
+  cursor: pointer;
+}
+
+.toolbar-wrapper .anticon[disabled] {
+  cursor: not-allowed;
+  opacity: 0.3;
+}
+
+.toolbar-wrapper .anticon:hover {
+  opacity: 0.3;
+}
+
+/* Style the Sider collapse trigger button */
+.ant-layout-sider-trigger {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border-top: 1px solid #d9d9d9 !important;
+}
+
+.ant-layout-sider-trigger:hover {
+  background: #f0f0f0 !important;
+  color: #000000 !important;
+}

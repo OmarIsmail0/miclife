@@ -1,0 +1,27 @@
+# NOTE: dist/ is deliberately NOT ignored — it is the build output the
+# Dockerfile copies in. nginx.conf is also required in the build context.
+# Everything else is excluded to keep the context small.
+.git
+.gitignore
+.vs
+node_modules
+src
+public
+Dockerfile
+.dockerignore
+Jenkinsfile
+k8s
+README.md
+docs
+.superpowers
+package.json
+package-lock.json
+vite.config.js
+eslint.config.js
+index.html
+push-to-github.ps1
+npm-debug.log*
+.env
+.env.*
+.vscode
+.idea

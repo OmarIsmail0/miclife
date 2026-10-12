@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cpanel
+  namespace: mic-dev
+  labels:
+    app: cpanel
+  annotations:
+    cert-manager.io/cluster-issuer: mic-dev-ca
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - cpanel.dev.mic.internal
+      secretName: cpanel-tls
+  rules:
+    - host: cpanel.dev.mic.internal
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: cpanel
+                port:
+                  number: 80
